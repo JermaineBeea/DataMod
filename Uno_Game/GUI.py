@@ -31,14 +31,13 @@ if run_exmaple:
   # Start the Tkinter event loop
   root.mainloop()
 
-root = tk.Tk()
-root.title('This is a test GUI')
+# root = tk.Tk()
+# root.title('This is a test GUI')
 
-entry = tk.Entry(root, width = 60)
+entry = tk.Entry('PLease enter name', width = 60)
 entry.pack(pady = 70)
 user_input = entry.get()
-messagebox.showinfo(f'Did you type {user_input}')
-button = tk.Button(root, text = 'Type your NAME', command = 'Type below')
-button.pack(pady = 70)
+# button = tk.Button(root, text = 'Type your NAME', command = 'Type below')
+# button.pack(pady = 70)
 
-root.mainloop()
+# root.mainloop()

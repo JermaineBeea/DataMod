@@ -1,8 +1,10 @@
-str_ = 'howa\abhh'
+import tkinter
 
-str_list = list(str_)
-str_2 = ''.join(str_list)
-print(str_[4])
-print(str_list)
-print(str_2)
+root = tkinter.Tk()
+root.title("Name Entry")
 
+entry = tkinter.Entry(root,width = 60)
+entry.pack(pady = 70)
+user_input = entry.get()
+
+root.mainloop()
