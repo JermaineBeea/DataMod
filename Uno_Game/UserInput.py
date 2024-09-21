@@ -21,22 +21,32 @@ def closeMatch (input, valid_inputs, **kwargs):
   close_match = df.get_close_matches(input, valid_inputs, n = num_matches, cutoff = match_ratio)
   return close_match
 
-def YesNo (initial_input, close_match, attempts = 3):
+def YesNo_RetryCancel (initial_input, close_match, attempts = 3):
+
+  # Validation and eror handling if use doesn't select 'YES' or 'NO'
   for n in range(attempts):
     attempts_left = attempts - n
     text_ = 'attempts' if attempts_left > 1 else 'attempts'
-    user_input = messagebox.askyesno('YES OR NO', f'Did you imply to type {close_match}')
-    
-    if user_input is False: messagebox.showwarning(f'ERROR', f'NO entry made {attempts_left} {text_} left before program Exists')
-    elif n == attempts: messagebox.showinfo('USER ERROR', 'Too many invalid entries, program exited'); exit()
 
-  # If use enter valid response YES or NO
-  for n in range(attempts):
-    attempts_left = attempts - n
-    if user_input == 'yes': user_input = close_match[0]; return user_input
+    user_input = messagebox.askYesNo_RetryCancel('YES OR NO', f'Did you imply to type {close_match}')
+    if user_input: break
+    elif user_input is False: messagebox.showwarning(f'ERROR', f'Void entry made {attempts_left} {text_} left before program Exists')
+    elif n == attempts: messagebox.showinfo('USER INPUT ERROR', 'Too many void entries, program exited'); exit()
+
+  # If use enter valid response YES or NO, then further validation for RETRY or CANCEL entry
+
+    if user_input == 'yes': user_input = close_match; return user_input
     elif user_input == 'no' : 
-      user_input = messagebox.askretrycancel('RETRY OR CANCEL', f'Retry or Cancel to Exit program')
-      if user_input is False: messagebox.showwarning(f'ERROR', f'NO entry made {attempts_left} {text_} left before program Exists')
+      for n in range(attempts):
+        attempts_left = attempts - n
+        text_ = 'attempts' if attempts_left > 1 else 'attempts'
+        user_input = messagebox.askretrycancel('RETRY OR CANCEL', f'Retry or Cancel to Exit program')
+
+        if user_input == 'retry': break
+        if user_input == 'cancel': exit()
+        elif user_input is False: messagebox.showwarning(f'ERROR', f'Void entry made {attempts_left} {text_} left before program Exists')
+        elif n == attempts: messagebox.showinfo('USER INPUT ERROR', 'Too many void entries, program exited'); exit()
+
 
 def AppendInput (initial_input, num = 3):
   num_sample = np.random.randint(low = 1, high = 9, size = num).astype(str)
@@ -73,9 +83,9 @@ def validateInput(user_input, **kwargs):
     Break_Exit = [break_flag] + [exit_flag]
     close_match = closeMatch(user_input,Break_Exit, match_ratio = 0.8)
     if user_input in Break_Exit: return user_input, is_valid
-    # Run YesNo function to validate if user wanted to type the close match
+    # Run YesNo_RetryCancel function to validate if user wanted to type the close match
     elif close_match: 
-      user_input = YesNo(user_input,close_match)
+      user_input = YesNo_RetryCancel(user_input,close_match)
       return user_input, is_valid
   
   # User validation for DATA TYPE 
@@ -102,8 +112,8 @@ def validateInput(user_input, **kwargs):
     if print_log:print('MANDATORY CONDITION')
     # Check to see if User did not mispell
     close_match = closeMatch(user_input, mandatory_input)
-    # Run YesNo function to determine if user wanted to type close match
-    if close_match and user_input not in mandatory_input: YesNo(user_input, close_match)
+    # Run YesNo_RetryCancel function to determine if user wanted to type close match
+    if close_match and user_input not in mandatory_input: YesNo_RetryCancel(user_input, close_match)
     else: print(f'Please type one of the mandatory inputs -> {mandatory_input}')
     is_valid = False
     return user_input, is_valid
@@ -112,8 +122,8 @@ def validateInput(user_input, **kwargs):
   if elective_input:
     if print_log:print('ELECTIVE CONDITION')
     close_match = closeMatch(user_input, elective_input)
-    # Run YesNo function to determine if user wanted to type close match
-    if close_match and user_input not in elective_input: YesNo(user_input, close_match)
+    # Run YesNo_RetryCancel function to determine if user wanted to type close match
+    if close_match and user_input not in elective_input: YesNo_RetryCancel(user_input, close_match)
     else: return user_input, is_valid
 
   return user_input, is_valid
@@ -142,8 +152,10 @@ if __name__ == '__main__' and run_test is True:
     name_input = input(message)
     name_input = name_input.lower()
     name_input, is_valid = validateInput(name_input, **key_inputs)
+
     if name_input == break_flag: break
     if name_input == exit_flag: exit()
+    
     if is_valid:
       if name_input not in players.keys():
         count = count + 1
