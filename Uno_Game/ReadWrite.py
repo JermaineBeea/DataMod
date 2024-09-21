@@ -17,6 +17,15 @@ def write_toArray (file_path):
     return array
   else: raise FileNotFoundError(f'The path {file_path} does not exist')
 
+# TODO fix pathFormat
+def pathFormat (file_path):
+  if os.path.exist(file_path):
+
+    try: var_ = file_path
+    except: file_path = file_path.replace("\\", "/")
+
+  else: raise FileNotFoundError(f'The path {file_path} does not exist')
+
 run_test = True
 if __name__ == '__main__' and run_test:
   

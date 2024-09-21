@@ -6,164 +6,141 @@ import tkinter
 from tkinter import messagebox
 
 from ReadWrite import write_toArray
+from ReadWrite import pathFormat
 
-# Print log is to display which condition in the ValidateInput function are active durig run of Main.
-print_log = False
+# Print log is to display which condition in the ValidateInput function is active during the run of Main.
+print_log = True
 
-def closeMatch (input, valid_inputs, **kwargs):
+def closeMatch(input_str, valid_inputs, num_matches=1, match_ratio=0.6):
   """
-  KEY INPUTS:
-    num_matches: Default is 1
-    match_ratio: Default is 0.6
+  Find close matches to the input string within the valid inputs.
   """
-  num_matches = kwargs.get('num_matches', 1)
-  match_ratio = kwargs.get('match_ratio', 0.6)
-  close_match = df.get_close_matches(input, valid_inputs, n = num_matches, cutoff = match_ratio)
-  return close_match
+  return df.get_close_matches(input_str, valid_inputs, n=num_matches, cutoff=match_ratio)
 
-def YesNo_RetryCancel (initial_input, close_match, attempts = 3):
-
-  # Validation and eror handling if use doesn't select 'YES' or 'NO'
+def YesNo_RetryCancel(initial_input, close_match, attempts=3):
+  """
+  Handles user confirmation dialogs with 'YES', 'NO', 'RETRY', and 'CANCEL' options.
+  """
   for n in range(attempts):
     attempts_left = attempts - n
-    text_ = 'attempts' if attempts_left > 1 else 'attempts'
+    text_ = 'attempts' if attempts_left > 1 else 'attempt'
+    if print_log: print(f'ITERATION {n + 1}')
 
-    user_input = messagebox.askYesNo_RetryCancel('YES OR NO', f'Did you imply to type {close_match}')
-    if user_input: break
-    elif user_input is False: messagebox.showwarning(f'ERROR', f'Void entry made {attempts_left} {text_} left before program Exists')
-    elif n == attempts: messagebox.showinfo('USER INPUT ERROR', 'Too many void entries, program exited'); exit()
+    user_input = messagebox.askyesno('YES OR NO', f'Did you mean to type {close_match}?')
+    if user_input:
+      return close_match
+    elif user_input is False:
+      messagebox.showwarning('ERROR', f'Invalid entry. {attempts_left} {text_} left before program exits.')
+    if n == attempts - 1:
+      messagebox.showinfo('USER INPUT ERROR', 'Too many invalid entries, program exited.')
+      exit()
 
-  # If use enter valid response YES or NO, then further validation for RETRY or CANCEL entry
+  return None
 
-    if user_input == 'yes': user_input = close_match; return user_input
-    elif user_input == 'no' : 
-      for n in range(attempts):
-        attempts_left = attempts - n
-        text_ = 'attempts' if attempts_left > 1 else 'attempts'
-        user_input = messagebox.askretrycancel('RETRY OR CANCEL', f'Retry or Cancel to Exit program')
-
-        if user_input == 'retry': break
-        if user_input == 'cancel': exit()
-        elif user_input is False: messagebox.showwarning(f'ERROR', f'Void entry made {attempts_left} {text_} left before program Exists')
-        elif n == attempts: messagebox.showinfo('USER INPUT ERROR', 'Too many void entries, program exited'); exit()
-
-
-def AppendInput (initial_input, num = 3):
-  num_sample = np.random.randint(low = 1, high = 9, size = num).astype(str)
-  str_1 = ''.join(num_sample)
-  appended_input = ''.join((str_1, initial_input))
-  return appended_input
+def AppendInput(initial_input, num=3):
+    """
+    Append a random number string to the initial input to create a new suggestion.
+    """
+    num_sample = np.random.randint(1, 9, size=num).astype(str)
+    return ''.join(num_sample) + initial_input
 
 def validateInput(user_input, **kwargs):
-  """
-  key Inputs:
-    data_type Default -> None
-    break_flag: Default -> []
-    exit_flag = Default -> []
-    invalid_input = Default -> []
-    mandatory_input = Default -> []
-    elective_input = Default -> []
+    """
+    Validate the user input against several conditions such as break/exit flags,
+    invalid inputs, mandatory inputs, and data types.
+    """
+    is_valid = True
+    user_input = user_input.lower()
 
-  """
-  is_valid = True
-  user_input = user_input.lower()
+    # Retrieve validation criteria from kwargs
+    break_flag = kwargs.get('break_flag', [])
+    exit_flag = kwargs.get('exit_flag', [])
+    data_type = kwargs.get('data_type', None)
+    invalid_input = kwargs.get('invalid_input', [])
+    mandatory_input = kwargs.get('mandatory_input', [])
+    elective_input = kwargs.get('elective_input', [])
 
-  # region Default Key arguments
-  break_flag = kwargs.get('break_flag', [])
-  exit_flag = kwargs.get('exit_flag', [])
-  data_type = kwargs.get('data_type', None)
-  invalid_input = kwargs.get('invalid_input', [])
-  mandatory_input = kwargs.get('mandatory_input', [])
-  elective_input = kwargs.get('elective_input', [])
-  # endregion
-
-  # Break/Exit flag validation
-  if break_flag or exit_flag:
-    if print_log: print('BREAK/EXIT CONDITION')
-    Break_Exit = [break_flag] + [exit_flag]
-    close_match = closeMatch(user_input,Break_Exit, match_ratio = 0.8)
-    if user_input in Break_Exit: return user_input, is_valid
-    # Run YesNo_RetryCancel function to validate if user wanted to type the close match
-    elif close_match: 
-      user_input = YesNo_RetryCancel(user_input,close_match)
+    # Break/Exit flag validation
+    if break_flag or exit_flag:
+        if print_log: print('BREAK/EXIT CONDITION')
+    
+    # Break/Exit Validation
+    if user_input in [break_flag, exit_flag]:
       return user_input, is_valid
-  
-  # User validation for DATA TYPE 
-  input_type = type(user_input)
-  if data_type is not None  and not isinstance(user_input, data_type):
-    if print_log:print('DATA TYPE CONDITION')
-    is_valid = False   
-    print(f'Data type of {input_type} is invalid. Please enter correct data type {data_type}')
-    return user_input, is_valid
-  
-  # User validation for INVALID input
-  if invalid_input: 
-    if print_log:print('INVALID CONDITION')
-  # Check to see if input is part of invalid 
-  # match_ratio is lowered to 0.4 to ensure better filetring of invalid data
-    close_match = closeMatch(user_input, invalid_input, match_ratio = 0.6)
+    close_match = closeMatch(user_input, [break_flag, exit_flag], match_ratio=0.8)
     if close_match:
-      is_valid = False
-      print(f'Please ensure your input does not contain {close_match[0].upper()}')
+      if print_log: print('CLOSE MATCH FOUND')
+      user_input = YesNo_RetryCancel(user_input, close_match[0])
       return user_input, is_valid
 
-  # User validation for MANDATORY input
-  if mandatory_input and user_input not in mandatory_input:
-    if print_log:print('MANDATORY CONDITION')
-    # Check to see if User did not mispell
-    close_match = closeMatch(user_input, mandatory_input)
-    # Run YesNo_RetryCancel function to determine if user wanted to type close match
-    if close_match and user_input not in mandatory_input: YesNo_RetryCancel(user_input, close_match)
-    else: print(f'Please type one of the mandatory inputs -> {mandatory_input}')
-    is_valid = False
+    # Data type validation
+    if data_type is not None and not isinstance(user_input, data_type):
+      if print_log: print('DATA TYPE CONDITION')
+      is_valid = False
+      print(f'Invalid data type. Expected {data_type}, got {type(user_input)}')
+      return user_input, is_valid
+
+    # Invalid input validation
+    if invalid_input:
+      if print_log: print('INVALID CONDITION')
+      close_match = closeMatch(user_input, invalid_input, match_ratio=0.6)
+      if close_match:
+        is_valid = False
+        print(f'Invalid input: {close_match[0].upper()}')
+        return user_input, is_valid
+
+    # Mandatory input validation
+    if mandatory_input and user_input not in mandatory_input:
+      if print_log: print('MANDATORY CONDITION')
+      close_match = closeMatch(user_input, mandatory_input)
+      if close_match and user_input not in mandatory_input:
+        user_input = YesNo_RetryCancel(user_input, close_match[0])
+        return user_input, False
+      else:
+        print(f'Please enter one of the mandatory inputs: {mandatory_input}')
+        return user_input, False
+
+    # Elective input validation
+    if elective_input:
+      if print_log: print('ELECTIVE CONDITION')
+      close_match = closeMatch(user_input, elective_input)
+      if close_match and user_input not in elective_input:
+        user_input = YesNo_RetryCancel(user_input, close_match[0])
+        return user_input, is_valid
+
     return user_input, is_valid
 
-  # User input validation for ELECTIVE input
-  if elective_input:
-    if print_log:print('ELECTIVE CONDITION')
-    close_match = closeMatch(user_input, elective_input)
-    # Run YesNo_RetryCancel function to determine if user wanted to type close match
-    if close_match and user_input not in elective_input: YesNo_RetryCancel(user_input, close_match)
-    else: return user_input, is_valid
-
-  return user_input, is_valid
-
-# region Test Defined Functions
-run_test = True
-if __name__ == '__main__' and run_test is True:
-
-  file_path = '/home/wtc/Documents/hello-friend/Uno_Game/Docs/swear.txt'
+# Main test function
+if __name__ == '__main__':
+  file_path = r'C:\Users\Work\OneDrive\Programming\Repositories\JermaineRepo\Uno_Game\Docs\swear.txt'
   profanities = write_toArray(file_path)
   count = 1
   exit_flag = 'exit'
   break_flag = 'done'
 
   key_inputs = {
-    'break_flag' :break_flag,
-    'exit_flag' :exit_flag,
-    'data_type' : str,
-    'invalid_input' : profanities
+    'break_flag': break_flag,
+    'exit_flag': exit_flag,
+    'data_type': str,
+    'invalid_input': profanities
   }
 
   players = {}
 
   while True:
-    message = f'Player {count} Please enter name, type {break_flag.upper()} to finish or {exit_flag.upper()} to quit game : '
-    name_input = input(message)
-    name_input = name_input.lower()
+    message = f'Player {count}, please enter your name. Type {break_flag.upper()} to finish or {exit_flag.upper()} to quit the game: '
+    name_input = input(message).lower()
     name_input, is_valid = validateInput(name_input, **key_inputs)
 
     if name_input == break_flag: break
     if name_input == exit_flag: exit()
-    
-    if is_valid:
-      if name_input not in players.keys():
-        count = count + 1
-        players[name_input] = []
-      else: 
-        suggested_name = AppendInput(name_input)
-        print(f'ERROR!, Name {name_input} already taken, try name {suggested_name}')
-         
-  print(f'Players are {players}')
 
-  # endregion
+    if is_valid:
+      if name_input not in players:
+        players[name_input] = []
+        count += 1
+      else:
+        suggested_name = AppendInput(name_input)
+        print(f'ERROR! Name "{name_input}" is already taken. Try "{suggested_name}" instead.')
+
+  print(f'Players: {players}')

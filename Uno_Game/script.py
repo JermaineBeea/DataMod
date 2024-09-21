@@ -1,6 +1,8 @@
-import tkinter
-from tkinter import messagebox
+str_ = 'howa\abhh'
 
-var = messagebox.askquestion()
+str_list = list(str_)
+str_2 = ''.join(str_list)
+print(str_[4])
+print(str_list)
+print(str_2)
 
-print(var)
