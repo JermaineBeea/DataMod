@@ -97,12 +97,12 @@ entry_tab.place(relx = x_label, rely = y_tab, anchor = 'center')
 
 submit_button = tkinter.Button(widget_root, command = parseInput, text = 'Submit',  font = ('Arial', 13), bg = 'darkred', fg = 'white')
 y_submit = y_tab + 0.2
-x_submit = x_label - 0.1
+x_submit = x_label - 0.15
 submit_button.place(relx = x_submit , rely = y_submit, anchor = 'center')
 
 cancel_button = tkinter.Button(widget_root, command = cancel, text = 'Cancel', font= ('Arial', 13), bg = 'darkred',  fg = 'white')
 y_cancel = y_submit
-x_cancel = x_submit + 0.2
+x_cancel = x_submit + 0.3
 cancel_button.place(relx = x_cancel , rely = y_cancel, anchor = 'center')
 
 widget_root.bind('<Return>', parseInput)
