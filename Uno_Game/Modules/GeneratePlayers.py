@@ -21,7 +21,7 @@ def flagFilter(user_input, flag_copy):
     return return_match, return_name
 
 def checkDuplicate(user_input, list):
-    characters = ['@', '$', '&']
+    characters = ['@', '$', '&','%', '']
     if user_input in list:
       appended = user_input
       while appended in list:
