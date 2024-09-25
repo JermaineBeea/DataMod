@@ -3,8 +3,11 @@ from Modules.RandGenerator import randId
 
 
 # Variables for cards 
+wild_card = ['W_1', 'W_2', 'W_3']
 colour = ['red','blue','yellow','white']
 card_num = list(range(10))
+action_cards = ['act_1', 'act_2', 'act_3']
+wild_card = ['W_1', 'W_2', 'W_3']
 
 num_drawn_cards = 4
 used_Id = []
