@@ -24,9 +24,9 @@ rand_Id = np.random.randint(low = 0, high = Num_unique_cards, size = 1)
 # Condition for wild card
 # Colour for wild card is constant
 if 0 <= rand_Id < wild_size:
-  indx = wil
+  indx = wild_size - rand_Id
   wild_colour = 'brown'
-  drawn_card = wild_card[rand_Id]
+  drawn_card = wild_card[indx]
   drawn_card = [drawn_card, wild_colour]
 
 # Condition for card Act and olour
