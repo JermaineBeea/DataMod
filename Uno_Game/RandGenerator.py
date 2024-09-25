@@ -5,7 +5,7 @@ def modulos(numSize, unique_Id):
     # A helper function to compute the modular indexes
     return unique_Id // numSize, unique_Id % numSize
 
-def randId(set_1, set_2, unique_Id = None, output_Id = False):
+def randId(set_1, set_2, unique_Id = None, output_Id = True):
     """
   Generates a random unique identifier and selects a pair of elements from set_1 and set_2
   based on the generated identifier. The identifier corresponds to an index in the product

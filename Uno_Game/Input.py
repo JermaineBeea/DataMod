@@ -9,21 +9,30 @@ def parseInput (event = None):
 	user_input = input_tab.get()
 	
 	if user_input:
+		
 		#Data Type validation for user input
 		dtype_is_valid = True
 		flag_dtype = flag_libr.get('data', None)	
-		if flag_dtype is not None: 
+		
+		if flag_dtype is not None:
 			flag_copy.pop('data')
 			if not isinstance(user_input, tuple(flag_dtype)): dtype_is_valid = False
+			
 		if dtype_is_valid: 
 			close_match, name_flag = flagFilter(user_input, flag_copy)
-			if name_flag == 'invalid': messagebox.showwarning('PROFANITY',f'Please ensure input does not contain {close_match[0].upper()}')
-			# Prompt for close match only valid if user input not exactly equal to match
-			elif close_match and close_match[0] != user_input: 
-				answer = messagebox.askyesno('VALIDATION', f'Were you trying to type {close_match[0]}')
-				if answer == 'yes': user_input = close_match[0]
-			elif close_match: player_names[user_input] = []
+			if close_match:
+				bool_flag = user_input == close_match[0]
+				if name_flag == 'invalid': messagebox.showwarning('INVALID ENTRY',f'Please ensure input does not contain {close_match[0].upper()}')
+				# Prompt for close match only valid if user input not exactly equal to match
+				elif bool_flag: player_names[user_input] = []
+				elif not bool_flag: 
+					answer = messagebox.askyesno('VALIDATION', f'Were you trying to type {close_match[0]}')
+					if answer == 'yes': user_input = close_match[0]
+				else: player_names[user_input] = []
+			else: player_names[user_input] = []
+			
 		else: messagebox.showerror('INVALID DATA TYPE', f'Please ensure input if of data type {flag_dtype}')
+		
 	else: messagebox.showerror('VOID ENTRY ERROR', 'Void input invalid')
 	
 	input_tab.delete(0, 'end')
@@ -34,7 +43,7 @@ def flagFilter (user_input, flag_copy):
 	return_match = ''; return_name = ''
 	instance = False
 	for flag_name, flag_elements in flag_copy.items():
-		flag_match = difflib.get_close_matches(user_input, flag_elements, cutoff = 0.4, n = 1)
+		flag_match = difflib.get_close_matches(user_input, flag_elements, cutoff = 0.7, n = 1)
 		if flag_match and flag_name == 'invalid': 
 			return flag_match, flag_name
 		elif flag_match and not instance:
@@ -45,6 +54,7 @@ def flagFilter (user_input, flag_copy):
 	return return_match, return_name
 	
 def cancel (event = None):
+	
 	widget_root.destroy()
 
 def centerWidget (widget_root, root_width, root_height):
@@ -57,13 +67,10 @@ def centerWidget (widget_root, root_width, root_height):
 
 
 flag_libr = {
-
 #"valid": ['david','susan','mathew'],
-'invalid': ['fuck','shit','crap','bitch'],
-'data':[str],
-'break_flag': ['cancel'],
-'exit_flag': ['exit'],
+'invalid': ['#','fuck','shit','crap','bitch',],
 
+'data':[str],
 }
 
 player_names = {}
@@ -104,15 +111,17 @@ cancel_button = tkinter.Button(widget_root, command = cancel, text = 'Cancel', f
 x_0 += 0.4
 cancel_button.place(relx = x_0, rely = y_0, anchor = 'center')
 
+
 widget_root.bind('<Return>', parseInput)
 widget_root.bind('<Escape>', cancel)
+#widget_root.bind('exit', cancel)
 
 widget_root.mainloop()
 	
 
-print(f'Players are {player_names}')
+if __name__ == '__main__':
 	
-	
+	...
 
 
 
