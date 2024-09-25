@@ -32,6 +32,7 @@ def checkDuplicate(user_input, list):
       answer = messagebox.askyesno('NAME USED', f'{user_input.upper()} already used, do you want to try {appended}?')
       if answer:
         if answer == 'yes': 
+          print(f'APPENDED IS {appended}')
           user_input = appended
           return user_input
       else: 
