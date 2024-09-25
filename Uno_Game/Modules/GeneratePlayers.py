@@ -49,6 +49,7 @@ def parseInput(event = None):
       user_input = user_input.strip()
       user_input.lower()
       user_input = checkDuplicate(user_input, list(player_names.keys()))
+      print(f'DATA TYPE IS {type(user_input)}')
       # Data Type validation for user input
       dtype_is_valid = True
       flag_dtype = flag_libr.get('data', None)
