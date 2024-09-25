@@ -34,14 +34,14 @@ if 0 <= rand_Id < wild_size:
 max = wild_size + actColour_size
 if wild_size <= rand_Id < max:
   indx = max - rand_Id
-  card = rand_Id(action_attr, colour, unique_Id = ind)
+  card = rand_Id(action_attr, colour, unique_Id = indx)
 
 # Condition for card with attribute number & colour
 max = Num_unique_cards
 if wild_size + actColour_size <= rand_Id < max:
   indx = max - rand_Id
-  card = rand_Id(card_num, colour, )
-  used_Id = []
+  card = rand_Id(card_num, colour, unique_Id = indx )
+  
 
 
 
