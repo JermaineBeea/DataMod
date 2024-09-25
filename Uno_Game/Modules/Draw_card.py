@@ -1,6 +1,6 @@
 #from Input import *
 import numpy as np
-from Modules.RandGenerator import genRandId, generateExclude
+from RandGenerator import genRandId, generateExclude
 
 
 def drawCard ():

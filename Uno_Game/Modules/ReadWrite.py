@@ -18,7 +18,7 @@ def write_toArray (file_path):
     return array
   else: raise FileNotFoundError(f'The path {file_path} does not exist')
 
-# TODO fix pathFormat
+# TODO Fix escape characters
 def pathFormat (file_path):
   if os.path.exist(file_path):
 
