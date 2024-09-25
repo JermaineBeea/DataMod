@@ -14,6 +14,11 @@ wild_card = ['W_1', 'W_2', 'W_3']
 # colour & num
 # Action card & colour
 # Wild card isnt mapped with any other variable
+colourNum_size = len(colour)*len(card_num)
+actColour_size = len(action_card)*len(colour)
+wild_size = len(wild_card)
+
+Num_unique_cards = colourNum_size + actColour_size + wild_size
 
 num_drawn_cards = 4
 used_Id = []
