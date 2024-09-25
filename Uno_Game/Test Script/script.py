@@ -1,13 +1,29 @@
-import random
-import numpy as np
+import tkinter as tk
 
-user_input = 'david'
+# Sample data
+data = {
+    'dave': [(0, 'blue'), (1, 'red'), (1, 'blue'), (2, 'red')],
+    'mat': [(6, 'yellow'), (2, 'white'), (6, 'blue'), (0, 'yellow')]
+}
 
-characters = ['@', '$', '&']
-rand_num = np.random.randint(1, 10, size = 2).astype(str)
-rand_char = random.choice(characters)
-str_num = ''.join(rand_num)
-appended = ''.join((user_input, rand_char, str_num))
+# Create the main window
+root = tk.Tk()
+root.title("Card Representation")
 
-type_ = type(appended)
-print(type_)
+# Function to display player cards
+def display_cards(data):
+    for player, cards in data.items():
+        # Create a string for the player's cards
+        card_info = f"{player}\n"
+        for index, (num, color) in enumerate(cards):
+            card_info += f"Card {index + 1}: {num}, {color}\n"
+        
+        # Create a label for each player
+        label = tk.Label(root, text=card_info, justify=tk.LEFT)
+        label.pack(anchor='w', padx=10, pady=5)
+
+# Display the cards
+display_cards(data)
+
+# Start the Tkinter main loop
+root.mainloop()

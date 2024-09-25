@@ -1,5 +1,5 @@
 from Input import *
-from Uno_Game.Modules.RandGenerator import randId 
+from Modules.RandGenerator import randId 
 
 
 # Variables for cards 
