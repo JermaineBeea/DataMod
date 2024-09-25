@@ -30,25 +30,20 @@ if 0 <= rand_Id < wild_size:
   drawn_card = wild_cards[indx]
   drawn_card = [drawn_card, wild_colour]
 
-# Condition for card Act and olour
+# Condition for card with attribute Act & colour
 max = wild_size + actColour_size
 if wild_size <= rand_Id < max:
   indx = max - rand_Id
+  card = rand_Id(action_attr, colour)
 
-
-# Condition for Colour and Num card
+# Condition for card with attribute Act & colour
 max = Num_unique_cards
 if wild_size + actColour_size <= rand_Id < max:
   indx = max - rand_Id
   card = rand_Id(action_attr, colour)
   used_Id = []
 
-for player, cards in player_names.items():
-# rand_choice returns unique Id as first returnn value
-for _ in range(num_drawn_cards):
-  rand_choice = randId(card_num, colour, exclude = used_Id)
-  used_Id.append(rand_choice[0]) 
-  cards.append(rand_choice[1])
+
 
   print (f'{player_names}\n')
   print(used_Id)
