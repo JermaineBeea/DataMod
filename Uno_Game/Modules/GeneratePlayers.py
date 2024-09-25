@@ -125,6 +125,7 @@ widget_root.config(bg=widget_colour)
 centerWidget(widget_root, widget_width, widget_height, h_shift, v_shift)
 
 entry_label = tkinter.Label(widget_root, text='Enter Name below', font=global_font, bg='black', fg='white')
+#entry_label = tkinter.Text(widget_root, width=30, height=5)
 x_0 = 0.5
 y_0 = 0.3
 entry_label.place(relx=x_0, rely=y_0, anchor='center')
