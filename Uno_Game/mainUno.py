@@ -31,23 +31,23 @@ if 0 <= rand_Id < wild_size:
 
 # Condition for card Act and olour
 max = wild_size + actColour_size
-elif wild_size <= rand_Id < max:
-  indx = max
-
+if wild_size <= rand_Id < max:
+  indx = max - rand_Id
+  
 
 # Condition for Colour and Num card
-elif wild_size + actColour_size <= rand_d < wild_size + actColour_siz + colourNum_size
+if wild_size + actColour_size <= rand_d < wild_size + actColour_siz + colourNum_size
 
-num_drawn_cards = 4
-used_Id = []
+  num_drawn_cards = 4
+  used_Id = []
 
 for player, cards in player_names.items():
-  # rand_choice returns unique Id as first returnn value
-  for _ in range(num_drawn_cards):
-    rand_choice = randId(card_num, colour, exclude = used_Id)
-    used_Id.append(rand_choice[0]) 
-    cards.append(rand_choice[1])
+# rand_choice returns unique Id as first returnn value
+for _ in range(num_drawn_cards):
+  rand_choice = randId(card_num, colour, exclude = used_Id)
+  used_Id.append(rand_choice[0]) 
+  cards.append(rand_choice[1])
 
-print (f'{player_names}\n')
-print(used_Id)
+  print (f'{player_names}\n')
+  print(used_Id)
 
