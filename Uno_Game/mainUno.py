@@ -15,10 +15,11 @@ wild_card = ['W_1', 'W_2', 'W_3']
 # Action card & colour
 # Wild card isnt mapped with any other variable
 colourNum_size = len(colour)*len(card_num)
-actColour_size = len(action_card)*len(colour)
+actColour_size = len(action_cards)*len(colour)
 wild_size = len(wild_card)
 
 Num_unique_cards = colourNum_size + actColour_size + wild_size
+rand_Id = np.random.randint(low = 0, high = Num_unique_cards, size = 1)
 
 num_drawn_cards = 4
 used_Id = []
