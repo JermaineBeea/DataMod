@@ -9,7 +9,7 @@ def generateExclude(exclude, start = 0, end = 10, change = 1):
   for n in range(start, end, change):
     if n not in exclude: yield n
 
-def genRandId(set_1, set_2, exclude = [], unique_Id = None, output_Id = True):
+def genRandId(set_1, set_2, exclude = [], unique_Id = None, output_Id = False):
  
     set_size = len(set_1)
     numSize = len(set_2)
