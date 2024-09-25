@@ -40,6 +40,6 @@ if wild_size <= rand_Id < max:
 max = Num_unique_cards
 if wild_size + actColour_size <= rand_Id < max:
   indx = max - rand_Id
-  card = rand_Id(card_num, colour, unique_Id = indx )
+  card = randId(card_num, colour, unique_Id = indx )
   
 print(card)
