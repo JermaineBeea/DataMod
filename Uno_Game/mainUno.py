@@ -6,14 +6,16 @@ from RandGenerator import randId
 colour = ['red','blue','yellow','white']
 card_num = list(range(10))
 
-num_drawn_cards = 7
+num_drawn_cards = 4
 used_Id = []
 
 for player, cards in player_names.items():
-		rand_choice = randId(colour, card_num, exclude = used_Id)
-		# rand_choice returns unique Id as first returnn value
-		used_Id.append(rand_choice[0]) 
-		player_names[player] = [rand_choice[1] for _ in range(num_drawn_cards)]
+  # rand_choice returns unique Id as first returnn value
+  for _ in range(num_drawn_cards):
+    rand_choice = randId(card_num, colour, exclude = used_Id)
+    used_Id.append(rand_choice[0]) 
+    cards.append(rand_choice[1])
 		
-print (player_names, used_Id)
+print (f'{player_names}\n')
+print(used_Id)
 

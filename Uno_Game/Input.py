@@ -89,7 +89,6 @@ def cancel(event=None):
 def centerWidget(widget_root, root_width, root_height, hoizontal_shift, vertical_shift):
   screen_width = widget_root.winfo_screenwidth()
   screen_height = widget_root.winfo_screenheight()
-  print(f'SCREEN WIDTH {screen_width} and HEIGHT {screen_height}')
   x = (screen_width // 2) - (root_width // 2) + hoizontal_shift
   y = (screen_height // 2) - (root_height // 2) + vertical_shift
   widget_root.geometry(f"{root_width}x{root_height}+{x}+{y}")
