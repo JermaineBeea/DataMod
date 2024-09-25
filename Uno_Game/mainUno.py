@@ -30,7 +30,9 @@ if 0 <= rand_Id < wild_size:
   drawn_card = [drawn_card, wild_colour]
 
 # Condition for card Act and olour
-elif wild_size <= rand_Id < wild_size + actColour_size
+max = wild_size + actColour_size
+elif wild_size <= rand_Id < max:
+  indx = max
 
 
 # Condition for Colour and Num card
