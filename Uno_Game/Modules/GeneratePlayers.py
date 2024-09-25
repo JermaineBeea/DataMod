@@ -21,7 +21,7 @@ def flagFilter(user_input, flag_copy):
     return return_match, return_name
 
 def checkDuplicate(user_input, list):
-    characters = ['@', '$', '&','%', '']
+    characters = ['@', '$', '&','%', '^']
     if user_input in list:
       appended = user_input
       while appended in list:
@@ -30,6 +30,7 @@ def checkDuplicate(user_input, list):
         str_num = ''.join(rand_num)
         appended = ''.join((user_input, rand_char, str_num))
       answer = messagebox.askyesno('NAME USED', f'{user_input.upper()} already used, do you want to try {appended}?')
+      print(f'ANSWER IS {answer}')
       if answer:
         if answer == 'yes': 
           print(f'APPENDED IS {appended}')
