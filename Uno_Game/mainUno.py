@@ -19,7 +19,7 @@ wild_size = len(wild_cards)
 
 used_Id = []
 Num_unique_cards = colourNum_size + actColour_size + wild_size
-valid_range = generateExclude(used_Id, start = 0, end = Num_unique_cards)
+valid_range = list(generateExclude(used_Id, start = 0, end = Num_unique_cards))
 rand_Id = np.random.choice(valid_range)
 
 # Condition for wild card
