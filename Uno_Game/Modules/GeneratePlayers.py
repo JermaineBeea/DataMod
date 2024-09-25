@@ -48,6 +48,7 @@ def parseInput(event = None):
   if user_input:
       user_input = user_input.strip()
       user_input.lower()
+      #Check to see if user input already exist in players list
       user_input = checkDuplicate(user_input, list(player_names.keys()))
       print(f'DATA TYPE IS {type(user_input)}')
       # Data Type validation for user input
@@ -105,7 +106,7 @@ def change_xy(x_change=0, y_change=0):
 flag_libr = {
   #"valid": ['david','susan','mathew'],
   'invalid': ['#', 'fuck', 'shit', 'crap', 'bitch', ],
-  'data': [str],
+  'data': [str, int],
 }
 
 player_names = {}
