@@ -27,8 +27,8 @@ rand_Id = np.random.choice(valid_range)
 if 0 <= rand_Id < wild_size:
   indx = wild_size - rand_Id
   wild_colour = 'brown'
-  drawn_card = wild_cards[indx]
-  drawn_card = [drawn_card, wild_colour]
+  card = wild_cards[indx]
+  card = [card, wild_colour]
 
 # Condition for card with attribute Act & colour
 max = wild_size + actColour_size
@@ -42,9 +42,3 @@ if wild_size + actColour_size <= rand_Id < max:
   indx = max - rand_Id
   card = rand_Id(card_num, colour, unique_Id = indx )
   
-
-
-
-  print (f'{player_names}\n')
-  print(used_Id)
-
