@@ -22,13 +22,16 @@ Num_unique_cards = colourNum_size + actColour_size + wild_size
 rand_Id = np.random.randint(low = 0, high = Num_unique_cards, size = 1)
 
 # Condition for wild card
+# Colour for wild card is constant
 if 0 <= rand_Id < wild_size:
+  indx = wil
   wild_colour = 'brown'
   drawn_card = wild_card[rand_Id]
   drawn_card = [drawn_card, wild_colour]
 
 # Condition for card Act and olour
 elif wild_size <= rand_Id < wild_size + actColour_size
+
 
 # Condition for Colour and Num card
 elif wild_size + actColour_size <= rand_d < wild_size + actColour_siz + colourNum_size
