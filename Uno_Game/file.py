@@ -20,7 +20,7 @@ def librKeyMatch (user_input, libr):
   #Instance variable to check the instances of a close match
   instance = False
   for name_list, list_elements in libr.items():
-    close_match = difflib.get_close_matches(user_input, list_elements, cutoff = 0.4, n = 1)
+    close_match = difflib.get_close_matches(user_input, list_elements, cutoff = 0.6, n = 1)
     # We only intereted in the first instance of a close match assuming its not invalid
     if close_match and name_list != 'invalid' and instance is False:
       instance = True
@@ -52,7 +52,7 @@ def parseInput (event = None):
     if user_input_match: 
       # Check if user input does not equal close match, as prompt only applies for partial match
       bool_flag = user_input == user_input_match
-      if flag_name == 'invalid': messagebox.showerror('PROFANE user_input', f'Profane user_input "{user_input_match[0].upper()}" not permitted in name')
+      if flag_name == 'invalid': messagebox.showerror('PROFANITY CHECK', f'Profane input "{user_input_match[0].upper()}" not permitted in name')
       elif not bool_flag: messagebox.askyesno('VALIDATION', f'Did you imply to type {user_input_match}')
     elif is_valid_dtype: player_names[user_input] = []
   else: messagebox.showerror('ERROR', 'Void Entry: try again')
@@ -77,10 +77,10 @@ player_names = {}
 
 # Widget configuration parameters
 widget_colour = 'grey'
-root_width = 350
-root_height = 350
-label_x = 0.5
-label_y = 0.5
+root_width = 400
+root_height = 400
+x_label = 0.5
+y_label = 0.3
 
 widget_root = tkinter.Tk()
 #centerWidget(widget_root, root_width, root_height)
@@ -89,15 +89,21 @@ widget_root.title('USER INPUT')
 widget_root.config(bg = widget_colour)
 
 entry_label = tkinter.Label(widget_root, text = 'Enter name below', font = ('Arial', 20), fg = 'white', bg = widget_colour)
-entry_label.place(relx = label_x, rely = label_y, anchor = 'center')
+entry_label.place(relx = x_label, rely = y_label, anchor = 'center')
 
 entry_tab = tkinter.Entry(widget_root, width = 30)
-entry_tab.place(relx = label_x, rely = label_x + 0.2, anchor = 'center')
+y_tab = y_label + 0.2
+entry_tab.place(relx = x_label, rely = y_tab, anchor = 'center')
 
-submit_button = tkinter.Button(widget_root, command = parseInput, text = 'Submit',  font = ('Arial', 15), bg = 'darkgrey', fg = 'white')
-submit_button.place(relx = label_x , rely = label_y + 0.4, anchor = 'center')
+submit_button = tkinter.Button(widget_root, command = parseInput, text = 'Submit',  font = ('Arial', 13), bg = 'darkred', fg = 'white')
+y_submit = y_tab + 0.2
+x_submit = x_label - 0.1
+submit_button.place(relx = x_submit , rely = y_submit, anchor = 'center')
 
-cancel_button = tkinter.Button(widget_root, command = cancel, text = 'Cancel', font= ('Arial', 20), bg = 'darkgrey',  fg = 'white')
+cancel_button = tkinter.Button(widget_root, command = cancel, text = 'Cancel', font= ('Arial', 13), bg = 'darkred',  fg = 'white')
+y_cancel = y_submit
+x_cancel = x_submit + 0.2
+cancel_button.place(relx = x_cancel , rely = y_cancel, anchor = 'center')
 
 widget_root.bind('<Return>', parseInput)
 widget_root.bind('<Escape>', cancel)
