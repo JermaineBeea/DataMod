@@ -2,7 +2,6 @@
 import numpy as np
 from RandGenerator import genRandId, generateExclude
 
-
 def drawCard ():
   # Variables for cards 
   colour = ['red','blue','yellow','white']
@@ -44,3 +43,7 @@ def drawCard ():
     card = genRandId(card_num, colour, unique_Id = indx )
     
   return card
+
+if __name__ == '__main__':
+num_
+card = drawCard ()
