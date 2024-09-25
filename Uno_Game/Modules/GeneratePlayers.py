@@ -25,32 +25,31 @@ def checkDuplicate(user_input, list):
     if user_input in list:
       appended = user_input
       while appended in list:
-        rand_num = np.random.randint(1, 10, size = 2).astype(str)
+        rand_size = np.random.randint(1, 4, size = 1)
+        rand_num = np.random.randint(1, 10, size = rand_size).astype(str)
         rand_char = random.choice(characters)
         str_num = ''.join(rand_num)
         appended = ''.join((user_input, rand_char, str_num))
       answer = messagebox.askyesno('NAME USED', f'{user_input.upper()} already used, do you want to try {appended}?')
-      print(f'ANSWER IS {answer}')
       if answer:
           user_input = appended
           return user_input
-      else: 
-        messagebox.showerror('VOID ENTRY',f' Attempt terminated')
-    else: 
-      return user_input
+      else: user_input = None
+    else: return user_input
 
 # Functions for Widget Buttons
+
 def parseInput(event = None):
   # Copy of flag library to be used in flagFilter
   flag_copy = flag_libr.copy()
   user_input = input_tab.get()
+  user_input = user_input.strip()
+  user_input.lower()
 
-  if user_input:
-      user_input = user_input.strip()
-      user_input.lower()
-      #Check to see if user input already exist in players list
-      user_input = checkDuplicate(user_input, list(player_names.keys()))
-      print(f'DATA TYPE IS {type(user_input)}')
+  #Check to see if user input already exist in players list
+  user_input = checkDuplicate(user_input, list(player_names.keys()))
+  if user_input is None: pass 
+  elif user_input:
       # Data Type validation for user input
       dtype_is_valid = True
       flag_dtype = flag_libr.get('data', None)
