@@ -4,8 +4,8 @@ from RandGenerator import genRandId, generateExclude
 
 def drawCard ():
   # Variables for cards 
+  num_attribute = np.arange(10).astype(str)
   colour_atrr = ['red','blue','yellow','white']
-  num_attribute = list(range(10))
   action_attr = ['act_1', 'act_2', 'act_3']
   wild_cards = ['W_1', 'W_2', 'W_3']
 
@@ -26,7 +26,9 @@ def drawCard ():
 
   # Condition for wild card
   # Colour for wild card is constant
-  # Random index 
+  # Random index serves as Intra ID
+
+  # Condition for wild cards
   if 0 <= rand_float < Prob_a:
     indx = np.random.randint(low = 0, high = wild_size)
     wild_colour = 'brown'
@@ -52,5 +54,7 @@ def drawCard ():
   return [(unique_Id), card]
 
 if __name__ == '__main__':
-  cards = drawCard()
+  
+  num_card = 4
+  cards = [drawCard()[1] for _ in range(num_card)]
   print(cards)
