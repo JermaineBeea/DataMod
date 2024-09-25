@@ -5,7 +5,7 @@ def modulos(numSize, unique_Id):
     # A helper function to compute the modular indexes
     return unique_Id // numSize, unique_Id % numSize
     
-def generateExclude(exclude, start=0, end=10, change=1):
+def generateExclude(exclude, start = 0, end = 10, change=1):
   for n in range(start, end, change):
     if n not in exclude: yield n
 
