@@ -39,9 +39,9 @@ if wild_size <= rand_Id < max:
 
 # Condition for Colour and Num card
 max = Num_unique_cards
-if wild_size + actColour_size <= max
-  
-  num_drawn_cards = 4
+if wild_size + actColour_size <= rand_Id < max:
+  indx = max - rand_Id
+  card = rand_Id()
   used_Id = []
 
 for player, cards in player_names.items():
