@@ -47,4 +47,6 @@ def drawCard ():
 if __name__ == '__main__':
 
   num_card_drwan = 7
-  cards = np.map(dr)
+  cards = []
+
+  print(cards)
