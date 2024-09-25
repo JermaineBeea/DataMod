@@ -4,7 +4,7 @@ from Modules.RandGenerator import genRandId, generateExclude
 
 
 def drawCard ():
-  `# Variables for cards 
+  # Variables for cards 
   colour = ['red','blue','yellow','white']
   card_num = list(range(10))
   action_attr = ['act_1', 'act_2', 'act_3']
