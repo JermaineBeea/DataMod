@@ -45,5 +45,6 @@ def drawCard ():
   return card
 
 if __name__ == '__main__':
-num_
-card = drawCard ()
+
+  num_card_drwan = 7
+  cards = np.map(dr)
