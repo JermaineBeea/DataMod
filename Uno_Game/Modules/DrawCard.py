@@ -26,25 +26,31 @@ def drawCard ():
 
   # Condition for wild card
   # Colour for wild card is constant
+  # Random index 
   if 0 <= rand_float < Prob_a:
     indx = np.random.randint(low = 0, high = wild_size)
     wild_colour = 'brown'
     card = wild_cards[indx]
     card = [card, wild_colour]
+    card_type_ID = 0
+    unique_Id = card_type_ID, indx
 
   # Condition for card with attribute Act & colour
   max = Prob_a + Prob_b
   if Prob_a <= rand_float < max:
-    card = genRandId(action_attr, colour_atrr)
+    intra_Id, card = genRandId(action_attr, colour_atrr, output_Id = True)
+    card_type_ID = 1
+    unique_Id = card_type_ID, intra_Id
 
   # Condition for card with attribute number & colour
   max = Prob_a + Prob_b + Prob_c
   if Prob_a + Prob_b <= rand_float < max:
-    card = genRandId(num_attribute, colour_atrr)
-    
-  return card
+    intra_Id, card = genRandId(num_attribute, colour_atrr, output_Id = True)
+    card_type_ID = 2
+    unique_Id = card_type_ID, intra_Id
+
+  return [(unique_Id), card]
 
 if __name__ == '__main__':
-
   cards = drawCard()
   print(cards)
