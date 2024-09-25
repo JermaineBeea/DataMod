@@ -1,5 +1,5 @@
-from Input import *
-from Modules.RandGenerator import randId, generateExclude
+#from Input import *
+from Modules.RandGenerator import genRandId, generateExclude
 
 
 # Variables for cards 
@@ -34,12 +34,12 @@ if 0 <= rand_Id < wild_size:
 max = wild_size + actColour_size
 if wild_size <= rand_Id < max:
   indx = max - rand_Id
-  card = randId(action_attr, colour, unique_Id = indx)
+  card = genRandId(action_attr, colour, unique_Id = indx)
 
 # Condition for card with attribute number & colour
 max = Num_unique_cards
 if wild_size + actColour_size <= rand_Id < max:
   indx = max - rand_Id
-  card = randId(card_num, colour, unique_Id = indx )
+  card = genRandId(card_num, colour, unique_Id = indx )
   
 print(card)
