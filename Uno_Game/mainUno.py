@@ -21,6 +21,10 @@ wild_size = len(wild_card)
 Num_unique_cards = colourNum_size + actColour_size + wild_size
 rand_Id = np.random.randint(low = 0, high = Num_unique_cards, size = 1)
 
+if 0 <= rand_Id < wild_size
+elif wild_size <= rand_Id < wild_size + actColour_size
+elif wild_size + actColour_size <= rand_d < wild_size + actColour_siz + colourNum-size
+
 num_drawn_cards = 4
 used_Id = []
 
