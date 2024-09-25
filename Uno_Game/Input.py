@@ -40,7 +40,7 @@ def checkDuplicate(user_input, list):
       return user_input
 
 # Functions for Widget Buttons
-def parseInput(event=None):
+def parseInput(event = None):
   # Copy of flag library to be used in flagFilter
   flag_copy = flag_libr.copy()
   user_input = input_tab.get()
@@ -82,7 +82,7 @@ def parseInput(event=None):
 
   input_tab.delete(0, 'end')
 
-def cancel(event=None):
+def cancel(event = None):
   widget_root.destroy()
 # end region 
 
