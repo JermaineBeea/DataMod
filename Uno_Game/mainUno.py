@@ -3,9 +3,9 @@ from Modules.RandGenerator import randId
 
 
 # Variables for cards 
+card_num = list(range(10))
 wild_card = ['W_1', 'W_2', 'W_3']
 colour = ['red','blue','yellow','white']
-card_num = list(range(10))
 action_cards = ['act_1', 'act_2', 'act_3']
 wild_card = ['W_1', 'W_2', 'W_3']
 
