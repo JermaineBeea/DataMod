@@ -70,10 +70,9 @@ def parseInput(event = None):
             player_names[user_input] = []
           elif not bool_flag:
               answer = messagebox.askyesno('VALIDATION', f'Were you trying to type {close_match[0]}')
-              if answer == 'yes':
+              if answer: 
                 user_input = close_match[0]
-              else:
-                player_names[user_input] = []
+              player_names[user_input] = []
         else:
           player_names[user_input] = []
       else:
@@ -103,7 +102,7 @@ def change_xy(x_change=0, y_change=0):
 
 
 flag_libr = {
-  #"valid": ['david','susan','mathew'],
+  "valid": ['david','susan','mathew'],
   'invalid': ['#', 'fuck', 'shit', 'crap', 'bitch', ],
   'data': [str, int],
 }
