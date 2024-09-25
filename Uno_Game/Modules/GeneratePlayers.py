@@ -35,7 +35,7 @@ def checkDuplicate(user_input, list):
           user_input = appended
           return user_input
       else: 
-        messagebox.showerror('VOID ENTRY',f'User did not select "YES" or "NO", attempt terminated')
+        messagebox.showerror('VOID ENTRY',f' Attempt terminated')
     else: 
       return user_input
 
