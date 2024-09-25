@@ -18,8 +18,10 @@ colourNum_size = len(colour)*len(card_num)
 actColour_size = len(action_cards)*len(colour)
 wild_size = len(wild_card)
 
+used_Id = []
 Num_unique_cards = colourNum_size + actColour_size + wild_size
-
+valid_range = generateExclude(used_Id, 0, N)
+rand_Id = 
 rand_Id = np.random.randint(low = 0, high = Num_unique_cards, size = 1)
 
 # Condition for wild card
