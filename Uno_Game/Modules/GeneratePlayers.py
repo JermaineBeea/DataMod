@@ -38,7 +38,6 @@ def checkDuplicate(user_input, list):
     else: return user_input
 
 # Functions for Widget Buttons
-
 def parseInput(event = None):
   # Copy of flag library to be used in flagFilter
   flag_copy = flag_libr.copy()

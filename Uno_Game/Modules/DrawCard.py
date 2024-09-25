@@ -4,8 +4,8 @@ from RandGenerator import genRandId, generateExclude
 
 def drawCard ():
   # Variables for cards 
-  colour = ['red','blue','yellow','white']
-  card_num = list(range(10))
+  colour_atrr = ['red','blue','yellow','white']
+  num_attribute = list(range(10))
   action_attr = ['act_1', 'act_2', 'act_3']
   wild_cards = ['W_1', 'W_2', 'W_3']
 
@@ -13,40 +13,38 @@ def drawCard ():
   # colour & num
   # Action card & colour
   # Wild card isnt mapped with any other variable
-  colourNum_size = len(colour)*len(card_num)
-  actColour_size = len(action_attr)*len(colour)
+  colourNum_size = len(colour_atrr)*len(num_attribute)
+  actColour_size = len(action_attr)*len(colour_atrr)
   wild_size = len(wild_cards)
-
-  used_Id = []
   Num_unique_cards = colourNum_size + actColour_size + wild_size
-  valid_range = list(generateExclude(used_Id, start = 0, end = Num_unique_cards))
-  rand_Id = np.random.choice(valid_range)
+
+  Prob_a = wild_size/Num_unique_cards
+  Prob_b = actColour_size/Num_unique_cards
+  Prob_c = colourNum_size/Num_unique_cards
+
+  rand_float = np.random.random()
 
   # Condition for wild card
   # Colour for wild card is constant
-  if 0 <= rand_Id < wild_size:
-    indx = wild_size - rand_Id
+  if 0 <= rand_float < Prob_a:
+    indx = np.random.randint(low = 0, high = wild_size)
     wild_colour = 'brown'
     card = wild_cards[indx]
     card = [card, wild_colour]
 
   # Condition for card with attribute Act & colour
-  max = wild_size + actColour_size
-  if wild_size <= rand_Id < max:
-    indx = max - rand_Id
-    card = genRandId(action_attr, colour, unique_Id = indx)
+  max = Prob_a + Prob_b
+  if Prob_a <= rand_float < max:
+    card = genRandId(action_attr, colour_atrr)
 
   # Condition for card with attribute number & colour
-  max = Num_unique_cards
-  if wild_size + actColour_size <= rand_Id < max:
-    indx = max - rand_Id
-    card = genRandId(card_num, colour, unique_Id = indx )
+  max = Prob_a + Prob_b + Prob_c
+  if Prob_a + Prob_b <= rand_float < max:
+    card = genRandId(num_attribute, colour_atrr)
     
   return card
 
 if __name__ == '__main__':
 
-  num_card_drawn = 7
-  cards = [drawCard() for _ in range(num_card_drawn)]
-
+  cards = drawCard()
   print(cards)

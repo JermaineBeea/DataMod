@@ -9,7 +9,7 @@ def generateExclude(exclude, start = 0, end = 10, change = 1):
   for n in range(start, end, change):
     if n not in exclude: yield n
 
-def genRandId(set_1, set_2, exclude = [], unique_Id = None, output_Id = False):
+def genRandId(set_1, set_2, unique_Id = None, output_Id = False):
  
     set_size = len(set_1)
     numSize = len(set_2)
@@ -20,7 +20,7 @@ def genRandId(set_1, set_2, exclude = [], unique_Id = None, output_Id = False):
     #valid_range = list(generateExclude(exclude, 0, productMap_size))
     #unique_Id = random.choice(valid_range) if unique_Id is None else unique_Id
 
-    unique_Id = np.random.randint(low = 0, high = productMap_size, size = 1) if unique_Id is None else unique_Id
+    unique_Id = random.randint(0, productMap_size) if unique_Id is None else unique_Id
     # Compute the index for set_1 and set_2 using modular arithmetic
     set1_indx, set2_indx = modulos(numSize, unique_Id)
 
@@ -28,8 +28,10 @@ def genRandId(set_1, set_2, exclude = [], unique_Id = None, output_Id = False):
     set1_choice = set_1[set1_indx]
     set2_choice = set_2[set2_indx]
 
-    if output_Id:  return unique_Id, (set1_choice, set2_choice)
-    else: return set1_choice, set2_choice
+    if output_Id: 
+       return unique_Id, (set1_choice, set2_choice)
+    else: 
+       return set1_choice, set2_choice
 
 # region Test
 run_test = True
@@ -39,9 +41,7 @@ if __name__ == '__main__' and run_test is True:
   list_2 = np.array(range(10))
   rand_choice = genRandId(list_1, list_2)
 
-  exlude = [1, 2, 3, 4]
-  list_1 = list(generateExclude(exlude, 0, 10))
-  print(f'{list_1}')
+  
 
   # print(list_2)
 # endregion
