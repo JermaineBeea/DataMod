@@ -8,7 +8,7 @@ colour = ['red','blue','yellow','white']
 card_num = list(range(10))
 wild_card = ['W_1', 'W_2', 'W_3']
 action_cards = ['act_1', 'act_2', 'act_3']
-wild_card = ['W_1', 'W_2', 'W_3']
+wild_cards = ['W_1', 'W_2', 'W_3']
 
 #TYPES OF CARDS
 # colour & num
@@ -23,10 +23,14 @@ rand_Id = np.random.randint(low = 0, high = Num_unique_cards, size = 1)
 
 # Condition for wild card
 if 0 <= rand_Id < wild_size:
+	wild_colour = 'brown'
   
+	
 
-#condition for card Act and olour
+# Condition for card Act and olour
 elif wild_size <= rand_Id < wild_size + actColour_size
+
+# Condition for Colour and Num card
 elif wild_size + actColour_size <= rand_d < wild_size + actColour_siz + colourNum_size
 
 num_drawn_cards = 4
