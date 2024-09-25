@@ -16,9 +16,10 @@ def randId(set_1, set_2, exclude = [], unique_Id = None, output_Id = True):
     productMap_size = set_size * numSize
 
     # Generate the unique ID if not provided
+    # TODO address if exclude should be part of randID
     #valid_range = list(generateExclude(exclude, 0, productMap_size))
-    unique_Id = random.choice(valid_range) if unique_Id is None else unique_Id
-
+    #unique_Id = random.choice(valid_range) if unique_Id is None else unique_Id
+    unique_Id = np.random.randint(low = start, high = end, size = 1)
     # Compute the index for set_1 and set_2 using modular arithmetic
     set1_indx, set2_indx = modulos(numSize, unique_Id)
 
