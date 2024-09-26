@@ -7,7 +7,8 @@ from functools import partial
 players = {
     'dave': [(1, 'white'), (0, 'red'), (2, 'blue'), (9, 'white')],
     'susan': [(3, 'blue'), (0, 'blue'), (6, 'red'), ('act_3', 'blue')],
-    'mike': [(7, 'yellow'), (0, 'red'), (0, 'white'), (3, 'blue')]
+    'mike': [(7, 'yellow'), (0, 'red'), (0, 'white'), (3, 'blue')],
+    'kyle': [(7, 'yellow'), (0, 'red'), (0, 'white'), (3, 'blue')]
 }
 
 def sourceFunction(name):
@@ -21,7 +22,7 @@ button_width = 20  # Adjust width if necessary
 button_height = 2  # Reduced height for tighter fit
 
 # Root dimensions based on the number of players and button dimensions
-root_height = 10*np.pow(num_players,2) * button_height  # No extra space for tight fit
+root_height = np.pow(num_players,2) * button_height  # No extra space for tight fit
 root_width = button_width * 10  # Adjust width to fit button snugly
 
 # Initialize the root window
