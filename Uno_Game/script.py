@@ -3,8 +3,9 @@ import tkinter
 
 from Modules.GeneratePlayers import centerWidget
 
-def buttonAction ():
-  pass
+def buttonAction (num):
+  if num == 1: print('Button 1')
+  if 
 
 lst = (8, 'red'), (6, 'yellow'), (8, 'blue'), (2, 'yellow')
 
@@ -21,7 +22,7 @@ centerWidget(root, root_width, root_height, h_shift, v_shift)
 
 buttons = {}
 for n, item in enumerate(lst):
-  button = tkinter.Button(root, text = f'Button {n}' ,command = buttonAction)
+  button = tkinter.Button(root, text = f'Button {n}' ,command = buttonAction(n))
   button.pack(pady = 30)
 
 root.mainloop()
