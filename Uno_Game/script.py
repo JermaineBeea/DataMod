@@ -12,7 +12,7 @@ def sourceFunction (name):
 num_players = len(players)
 
 # Global Button configuration variables
-button_width = 15
+button_width = 5
 button_height = 5
 
 # Root Main config variables
@@ -29,8 +29,8 @@ centerWidget(root, root_width, root_height, x_shift, y_shift )
 for player_name, cards in players.items():
 
     func = partial(sourceFunction, name = player_name)
-    button = tkinter.Button(root, command = func, text = f'Player {player_name} Cards', font = ('Consolas', 14), bg = 'darkred', fg = 'white')
-    button.config(width = button_width, height= button_height)
+    button = tkinter.Button(root, command = func, text = f'{player_name} Cards', font = ('Consolas', 14), bg = 'darkred', fg = 'white')
+    # button.config(width = button_width, height= button_height)
     button.pack(pady = 30)
 
 root.mainloop()
