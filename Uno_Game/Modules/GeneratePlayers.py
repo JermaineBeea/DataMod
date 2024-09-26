@@ -138,6 +138,7 @@ def RunMain():
   widget_root.mainloop()
 
   print(f'Player names is {player_names}')
+  
 bypass_main = True
 if __name__ == '__main__' and not bypass_main:
   RunMain()
