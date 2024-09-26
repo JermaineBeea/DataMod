@@ -7,7 +7,7 @@ root.geometry('400x400')
 
 # FRAME 1
 # Adding black border with highlightthickness and bd
-for _ in range(5):
+for n in range(7):
   frame_back_colour = 'darkgrey'
   frame = tkinter.Frame(root, bg = frame_back_colour, width=100, height=200, highlightbackground='black', highlightthickness=2, bd=2)
   frame.pack_propagate(False)
@@ -15,7 +15,7 @@ for _ in range(5):
   label = tkinter.Label(frame, text= f'1', bg = 'red', font=('Arial', 24))
   label.pack(fill = 'both', expand = True)
 
-  frame.grid(row=i//3, column=i%3, padx=10, pady=10)
+  frame.grid(row=n//3, column=n%3, padx=10, pady=10)
 
 # # FRAME 2
 # # Adding black border with highlightthickness and bd
