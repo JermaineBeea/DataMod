@@ -17,7 +17,7 @@ def drawCard ():
   colour_atrr = ['red','blue','yellow','white']
   action_attr = ['act_1', 'act_2', 'act_3']
   wild_cards = ['W_1', 'W_2', 'W_3']
-  wild_colour = 'darkbrown'
+  wild_colour = 'darkgrey'
 
   #TYPES OF CARDS
   # colour & num

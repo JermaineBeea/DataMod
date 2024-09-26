@@ -1,6 +1,6 @@
 import tkinter
 
-cards = [('act_3', 'white'), (0, 'yellow'), ['W_1', 'darkbrown'], (0, 'white'), ['W_2', 'darkbrown'], ('act_1', 'yellow'), (1, 'red')]
+cards = [('act_3', 'grey'), (0, 'yellow'), ['W_1', 'darkgrey'], (0, 'grey'), ['W_2', 'darkgrey'], ('act_1', 'yellow'), (1, 'red')]
 
 def displayCards ():
   root = tkinter.Tk()
