@@ -11,7 +11,8 @@ for card in cards:
   frame = tkinter.Frame(root, bg = frame_colour, width=200, height=100)
   frame.pack(fill = 'both', expand= True, pady=10)
 
-  label = tkinter.Label
-
+  frame_text = str(card[0])
+  label = tkinter.Label(frame, text = frame_text, bg = frame_colour, font = ('Arial', 24))
+  label.pack(pd = 10)
 
 root.mainloop()
