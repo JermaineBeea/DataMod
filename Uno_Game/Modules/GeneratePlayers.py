@@ -77,7 +77,9 @@ def parseInput(event = None):
           answer = messagebox.askyesno('VALIDATION', f'Were you trying to type {close_match[0]}?')
           if answer:
             user_input = close_match[0]
-          player_names[user_input] = []
+            player_names[user_input] = []
+          else: 
+            player_names[user_input] = []
       else:
         player_names[user_input] = []
     else:
