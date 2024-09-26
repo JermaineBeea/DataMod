@@ -15,6 +15,6 @@ for _ in range(10):
   label = tkinter.Label(frame, text= f'Frame\nlabel', bg = frame_back_colour, font=('Arial', 24))
   label.pack(pady = 10)
 
-frame.grid(row= 2, column=3, padx=10, pady=10)
+  frame.grid(row= 2, column=3, padx=10, pady=10)
 
 root.mainloop()
