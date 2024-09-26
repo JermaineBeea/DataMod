@@ -17,6 +17,7 @@ def drawCard ():
   colour_atrr = ['red','blue','yellow','white']
   action_attr = ['act_1', 'act_2', 'act_3']
   wild_cards = ['W_1', 'W_2', 'W_3']
+  
 
   #TYPES OF CARDS
   # colour & num
@@ -40,7 +41,7 @@ def drawCard ():
   # Condition for wild cards
   if 0 <= rand_float < Prob_a:
     indx = np.random.randint(low = 0, high = wild_size)
-    wild_colour = 'brown'
+    wild_colour = 'darkbrown'
     card = wild_cards[indx]
     card = [card, wild_colour]
     card_type_ID = 0
