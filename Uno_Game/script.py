@@ -3,11 +3,13 @@ import tkinter
 
 from Modules.GeneratePlayers import centerWidget
 
-def buttonAction (n = 1):
+def button1 (n = 1):
   print('button_1')
 
-button1 = buttonAction(n = 2)
-button3 = buttonAction(n = 3)
+button2 = buttonAction1(n = 2)
+button2 = buttonAction1(n = 3)
+
+buttonts = button1, button2, button3
 
 lst = (8, 'red'), (6, 'yellow'), (8, 'blue'), (2, 'yellow')
 
