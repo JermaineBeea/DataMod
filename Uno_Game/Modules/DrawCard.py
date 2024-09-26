@@ -67,9 +67,9 @@ def drawCards(num_cards_drawn = 7):
   return cards
 
 # Main return is players_cards. Players_generated is fetched from GeneratePlayers
-# player_generated is to be passed to DrawCrads module
-
+# player_cards is to be passed to DrawCrads module
 players_cards = players_generated
+
 def RunMain ():
   """" 
   Main return is players_cards:
