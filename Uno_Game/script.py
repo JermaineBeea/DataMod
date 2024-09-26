@@ -23,8 +23,8 @@ button_width = 20
 button_height = 2  
 
 # Root dimensions based on the number of players and button dimensions
-root_height = 
-root_width = 100
+root_height = 400
+root_width = 400
 
 # Initialize the root window
 root = tkinter.Tk()
@@ -39,7 +39,7 @@ for player_name in players.keys():
     func = partial(sourceFunction, name=player_name)
     button = tkinter.Button(root, command=func, text=f'{player_name} \nCards', font = ('Consolas', 14), bg = 'darkred', fg='white')
     button.config(width=button_width, height=button_height)
-    button.pack(fill= 'y', expand= True) 
+    button.pack(fill= ('x','y',  expand= True) 
 
 # Start the main loop
 root.mainloop()
