@@ -1,6 +1,7 @@
 
 import tkinter
 
+from
 def centerWidget(widget_root, root_width, root_height, hoizontal_shift, vertical_shift):
   screen_width = widget_root.winfo_screenwidth()
   screen_height = widget_root.winfo_screenheight()
@@ -22,6 +23,7 @@ root = tkinter.Tk()
 root.title('Player Card')
 centerWidget(root, root_width, root_height, h_shift, v_shift)
 
+buttons = {}
 for n in lst:
-  
+  button = tkinter.Button(root, command = )
 root.mainloop()
