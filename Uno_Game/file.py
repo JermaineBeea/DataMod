@@ -3,13 +3,13 @@ import tkinter
 cards = [(9, 'white'), (1, 'white'), ['W_2', 'brown'], ('act_1', 'white'), (1, 'white'), (3, 'white'), ('act_2', 'white')]
 
 root = tkinter.Tk()
-root.geometry('400x400')
+root.geometry('400x550')
 
 # FRAME 1
 # Adding black border with highlightthickness and bd
 for n in range(7):
   frame_back_colour = 'darkgrey'
-  frame = tkinter.Frame(root, bg = frame_back_colour, width=100, height=200, highlightbackground='black', highlightthickness=2, bd=2)
+  frame = tkinter.Frame(root, bg = frame_back_colour, width = 100, height = 150, highlightbackground='black', highlightthickness=2, bd=2)
   frame.pack_propagate(False)
 
   label = tkinter.Label(frame, text= f'1', bg = 'red', font=('Arial', 24))
