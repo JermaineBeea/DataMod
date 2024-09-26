@@ -62,6 +62,5 @@ def drawCards(num_cards_drawn):
 
 if __name__ == '__main__':
   
-  num_card = 4
-  cards = [drawCard()[1] for _ in range(num_card)]
+  cards = drawCards(6)
   print(cards)

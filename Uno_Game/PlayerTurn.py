@@ -15,9 +15,9 @@ from functools import partial
 # }
 
 #players_generated is Fetched from GeneratePlayers
-num_drawn_cards = 4
 
 players = players_generated
+
 def sourceFunction(name):
     cards = players[name]
     print(f'Cards for player {name} \nare {cards}')
