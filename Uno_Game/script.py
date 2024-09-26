@@ -30,7 +30,7 @@ for player_name, cards in players.items():
 
     func = partial(sourceFunction, name = player_name)
     button = tkinter.Button(root, command = func, text = f'Player {player_name} Cards', font = ('Consolas', 14), bg = 'darkred', fg = 'white')
-    button.config(width = 15, height= 5)
+    button.config(width = button_width, height= button_height)
     button.pack(pady = 30)
 
 root.mainloop()
