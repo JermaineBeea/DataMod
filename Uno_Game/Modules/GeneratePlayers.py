@@ -151,4 +151,6 @@ def RunMain ():
 
 bypass_main = True
 if __name__ == '__main__' and not bypass_main:
-  
+  RunMain()
+else:
+  RunMain()
