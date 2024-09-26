@@ -8,7 +8,8 @@ players = {
     'dave': [(1, 'white'), (0, 'red'), (2, 'blue'), (9, 'white')],
     'susan': [(3, 'blue'), (0, 'blue'), (6, 'red'), ('act_3', 'blue')],
     'mike': [(7, 'yellow'), (0, 'red'), (0, 'white'), (3, 'blue')],
-    'kyle': [(7, 'yellow'), (0, 'red'), (0, 'white'), (3, 'blue')]
+    'kyle': [(7, 'yellow'), (0, 'red'), (0, 'white'), (3, 'blue')],
+    'daniel': [(7, 'yellow'), (0, 'red'), (0, 'white'), (3, 'blue')]
 }
 
 def sourceFunction(name):
@@ -39,7 +40,7 @@ for player_name in players.keys():
     func = partial(sourceFunction, name=player_name)
     button = tkinter.Button(root, command=func, text=f'{player_name} \nCards', font = ('Consolas', 14), bg = 'darkred', fg='white')
     button.config(width=button_width, height=button_height)
-    button.pack(pady = 5) 
+    button.pack(pady = 0) 
 
 # Start the main loop
 root.mainloop()
