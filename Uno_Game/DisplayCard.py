@@ -5,9 +5,12 @@ def displayCards (cards):
   Function to display cards 
   """
   root_width = 400
+  root_height = 400
+  x_shit = + 600
+  y_shift = - 200
   root = tkinter.Tk()
   frame_back_colour = 'darkgrey'
-  centerWidget(root, )
+  centerWidget(root,root_width, root_height, x_shit, y_shift)
 
   for n,card in enumerate(cards):
     card_colour = card[1]
