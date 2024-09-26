@@ -1,6 +1,7 @@
 import tkinter
 import numpy as np
 from Modules.GeneratePlayers import centerWidget
+from Modules.DrawCard import players_cards
 from DisplayCard import displayCards
 # from Modules.DrawCard import players_cards
 from functools import partial
