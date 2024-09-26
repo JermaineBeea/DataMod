@@ -139,7 +139,7 @@ def RunMain():
 
   print(f'Player names is {player_names}')
   
-bypass_main = True
+bypass_main = False
 if __name__ == '__main__' and not bypass_main:
   RunMain()
 else:
