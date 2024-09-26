@@ -20,9 +20,9 @@ num_players = len(players)
 button_width = 5
 button_height = 5
 
-# Calculate Root dimensions based on the number of players and button dimensions
-root_height = (button_height + 1) * num_players * 30  # Adjust height for spacing
-root_width = button_width * 100 + 50  # Add extra space for aesthetics
+# Root dimensions based on the number of players and button dimensions
+root_height = (button_height + 1) * num_players  # Adjust height for spacing
+root_width = button_width * 100   # Add extra space for aesthetics
 
 # Centering offsets
 x_shift = 0
