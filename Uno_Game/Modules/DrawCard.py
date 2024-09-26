@@ -80,3 +80,4 @@ def RunMain ():
 
 RunMain()
 
+print(players_cards)
