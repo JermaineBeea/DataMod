@@ -11,6 +11,10 @@ def sourceFunction (name):
 
 num_players = len(players)
 
+# Global Button configuration variables
+button_width = 15
+button_height = 5
+
 # Root Main config variables
 root_height = 30*num_players
 root = tkinter.Tk()
