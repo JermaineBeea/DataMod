@@ -3,7 +3,7 @@ main_bool = __name__ = '__main__'
 
 import numpy as np
 if main_bool:
-  from RandGenerator import genRandId
+  from Modules.RandGenerator import genRandId
 else: 
   from Modules.RandGenerator import genRandId
 

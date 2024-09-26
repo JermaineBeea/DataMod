@@ -21,7 +21,7 @@ players = players_generated
 for player in players_generated.keys():
     players_generated[player] = drawCards()
 
-print
+print(players_generated)
 
 def sourceFunction(name):
     cards = players[name]
