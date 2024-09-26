@@ -1,10 +1,9 @@
-import tkinter
+import tkinter as tk
 
-
-root = tkinter.Tk()
+root = tk.Tk()
 root.geometry('300x300')
 
-frame = tkinter.Frame(root, bg = 'red')
-frame.pack(pady = 10)
+frame = tk.Frame(root, bg='red', width=200, height=100)
+frame.pack(pady=10)
 
 root.mainloop()
