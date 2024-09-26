@@ -1,5 +1,4 @@
 import tkinter
 
-player = {"dave": [('1','red'), '2, 'blue]}
+player = {"dave": [('1','red'), ('2', 'blue')]}
 
-sourceButton 
