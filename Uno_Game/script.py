@@ -6,8 +6,8 @@ from Modules.GeneratePlayers import centerWidget
 def button1 (n = 1):
   print('button_1')
 
-button2 = buttonAction1(n = 2)
-button2 = buttonAction1(n = 3)
+button2 = button1(n = 2)
+button3 = button1(n = 3)
 
 buttonts = button1, button2, button3
 
@@ -26,8 +26,8 @@ centerWidget(root, root_width, root_height, h_shift, v_shift)
 
 buttons = {}
 global num
-for num, item in enumerate(lst):
-  button = tkinter.Button(root, text = f'Button {num}' ,command = buttonAction)
+for num, button in enumerate(buttons):
+  button = tkinter.Button(root, text = f'Button {num}' ,command = button)
   button.pack(pady = 30)
 
 root.mainloop()
