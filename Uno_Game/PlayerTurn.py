@@ -17,12 +17,11 @@ def sourceFunction(name):
     print(f'Cards for player {name} \nare {cards}')
 
 def playerTurn ():
-  num_players = len(players)
 
   # Global Button configuration variables
   button_width = 20  
   button_height = 2  
-  button_colour = 'darkblue'
+  button_colour = 'darkorange'
   text_colour = 'white'
 
   # Root dimensions based on the number of players and button dimensions
@@ -46,3 +45,4 @@ def playerTurn ():
 
   # Start the main loop
   root.mainloop()
+
