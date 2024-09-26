@@ -1,6 +1,4 @@
 import tkinter
-import numpy as np
-from Modules.GeneratePlayers import centerWidget  # Ensure this module is correctly imported
 from functools import partial
 
 # Player data
@@ -22,25 +20,23 @@ num_players = len(players)
 button_width = 20  
 button_height = 2  
 
-# Root dimensions based on the number of players and button dimensions
-metric = ...
-root_height = metric*num_players*button_height  
-root_width = button_width * 10  
+# Calculate root height snugly based on button height and number of players
+root_height = button_height * num_players  
 
 # Initialize the root window
 root = tkinter.Tk()
 root.title('Players')
 root.config(bg='darkgrey')
 
-# Center the window
-centerWidget(root, root_width, root_height)
+# Set the window size without additional margins
+root.geometry(f"{button_width * 10}x{root_height}")
 
 # Create and pack buttons for each player
 for player_name in players.keys():
     func = partial(sourceFunction, name=player_name)
-    button = tkinter.Button(root, command=func, text=f'{player_name} \nCards', font = ('Consolas', 14), bg = 'darkred', fg='white')
+    button = tkinter.Button(root, command=func, text=f'{player_name} \nCards', font=('Consolas', 14), bg='darkred', fg='white')
     button.config(width=button_width, height=button_height)
-    button.pack(pady = 0) 
+    button.pack(pady=0)  # Set pady to 0 for snug fit
 
 # Start the main loop
 root.mainloop()
