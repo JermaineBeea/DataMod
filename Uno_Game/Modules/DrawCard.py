@@ -9,7 +9,10 @@ else:
   from Modules.GeneratePlayers import players_generated
 
 # Variables
+# Used Id is to keep track of cards already drawn from deck
+global used_Id
 num_cards_drawn = 7
+used_Id = []
 
 def drawCard ():
   """"This function draws a card using a reandom ID generator"""
@@ -39,6 +42,8 @@ def drawCard ():
   # Probaility of drawing a card with Colour and Number characteristics
   Prob_colourNum = colourNum_size/Num_unique_cards
   
+  # Rand float is to detrmine whic card of the charateristics is drawn
+  # For the cards besided Wild cards, genRandId functions generated random Id to choose randomly betwen the given two chateristics that make up the card of the corresponding type.
   rand_float = np.random.random()
 
   # Condition for wild cards
@@ -48,6 +53,7 @@ def drawCard ():
     card = [card, wild_colour]
     card_type_ID = 0
     unique_Id = card_type_ID, indx
+    used_Id.append(unique_Id)
 
   # Condition for card with attribute Act & colour
   max = Prob_wildCard + Prob_actionColor
@@ -55,6 +61,7 @@ def drawCard ():
     intra_Id, card = genRandId(action_attr, colour_atrr, output_Id = True)
     card_type_ID = 1
     unique_Id = card_type_ID, intra_Id
+    used_Id.append(unique_Id)
 
   # Condition for card with attribute number & colour
   max = Prob_wildCard + Prob_actionColor + Prob_colourNum
@@ -62,13 +69,13 @@ def drawCard ():
     intra_Id, card = genRandId(num_attribute, colour_atrr, output_Id = True)
     card_type_ID = 2
     unique_Id = card_type_ID, intra_Id
-
-  return [(unique_Id), card]
+    used_Id.append(unique_Id)
+    
+  return card
 
 def drawCards(num_cards_drawn):
-  cards = [drawCard()[1] for _ in range(num_cards_drawn)]
-  used_Id = [drawCard()[0] for _ in range(num_cards_drawn)]
-  return cards, used_Id
+  cards = [drawCard() for _ in range(num_cards_drawn)]
+  return cards
 
 # Main return is players_cards. Players_generated is fetched from GeneratePlayers
 # player_cards is to be passed to DrawCrads module
@@ -80,6 +87,6 @@ def RunMain ():
   players_generated is fetched from GeneratePlayers
   """
   for player in players_cards.keys():
-      players_cards[player] = drawCards(num_cards_drawn)[0]
+    players_cards[player] = drawCards(num_cards_drawn)
 
 RunMain()
