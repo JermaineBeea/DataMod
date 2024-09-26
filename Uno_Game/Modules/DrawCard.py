@@ -69,9 +69,10 @@ def drawCards(num_cards_drawn = NUM):
 
 # Main return is players_cards
 # players_generated is fetched from GeneratePlayers
-players_cards = players_generated
-for player in players_cards.keys():
-    players_cards[player] = drawCards()
+def main ():
+  players_cards = players_generated
+  for player in players_cards.keys():
+      players_cards[player] = drawCards()
 
 # region Test
 if __name__ == '__main__':
