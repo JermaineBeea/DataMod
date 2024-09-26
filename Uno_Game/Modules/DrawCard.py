@@ -7,6 +7,8 @@ if main_bool:
 else: 
   from RandGenerator import genRandId
 
+from GeneratePlayers import *
+
 def drawCard ():
   """"This function draws a card using a reandom ID generator"""
 
@@ -65,6 +67,11 @@ NUM = 7
 def drawCards(num_cards_drawn = NUM):
   cards = [drawCard() for _ in range(num_cards_drawn)]
   return cards
+
+#players_generated is Fetched from GeneratePlayers
+players = players_generated
+for player in players_generated.keys():
+    players_generated[player] = drawCards()
 
 if main_bool:
   cards = drawCards(6)

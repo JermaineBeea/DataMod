@@ -4,12 +4,7 @@ from Modules.GeneratePlayers import*
 from Modules.DrawCard import drawCards
 from functools import partial
 
-#players_generated is Fetched from GeneratePlayers
-players = players_generated
-for player in players_generated.keys():
-    players_generated[player] = drawCards()
 
-print(players_generated)
 
 def sourceFunction(name):
     cards = players[name]
