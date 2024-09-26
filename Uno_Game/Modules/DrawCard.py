@@ -14,10 +14,10 @@ def drawCard ():
   # Variables for cards 
   #num_attribute = np.arange(10).astype(str)
   num_attribute = range(10)
-  colour_atrr = ['red','blue','yellow','white']
+  colour_atrr = ['darkred','blue','yellow','grey']
   action_attr = ['act_1', 'act_2', 'act_3']
   wild_cards = ['W_1', 'W_2', 'W_3']
-  wild_colour = 'darkgrey'
+  wild_colour = 'black'
 
   #TYPES OF CARDS
   # colour & num
