@@ -10,9 +10,8 @@ players_cards = {'david': [('act_2', 'grey'), ('act_2', 'darkblue'), (6, 'grey')
 
 
 # Player cards is fetched from DrawCard Module
-def sourceFunction(name):
-    cards = players_cards[name]
-    print(f'Cards for player {name} \nare {cards}')
+def sourceFunction(cards_drawn):
+    
 
 # Global Button configuration variables
 button_width = 20  
@@ -35,7 +34,7 @@ root.config(bg='darkgrey')
 centerWidget(root, root_width, root_height, x_shit, y_shift)
 
 # Create and pack buttons for each player
-for player_name in players_cards.keys():
+for player_name, cards_drawn in players_cards.items():
     func = partial(sourceFunction, name=player_name)
     button = tkinter.Button(root, command=func, text=f'{player_name.upper()} \n Display Cards', font = ('Consolas', 14), bg = button_colour, fg = text_colour)
     button.config(width=button_width, height=button_height)
