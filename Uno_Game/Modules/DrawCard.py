@@ -80,8 +80,3 @@ def main ():
 
 main ()
 
-# region Test
-if __name__ == '__main__':
-  cards = drawCards(6)
-  print(cards)
-#endregion
