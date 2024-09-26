@@ -1,6 +1,7 @@
 import tkinter
 from Modules.GeneratePlayers import centerWidget
-def displayCards (cards):
+
+def displayCards (root, cards):
   """" 
   Function to display cards 
   """
@@ -8,6 +9,7 @@ def displayCards (cards):
   root_height = 600
   x_shit = + 200
   y_shift = - 200
+  
   root = tkinter.Tk()
   frame_back_colour = 'darkgrey'
  #root.geometry(f'{root_width}x{root_height}')
