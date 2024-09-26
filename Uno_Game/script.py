@@ -20,7 +20,7 @@ button_width = 20  # Adjust width if necessary
 button_height = 2  # Reduced height for tighter fit
 
 # Root dimensions based on the number of players and button dimensions
-root_height = num_players * button_height  # No extra space for tight fit
+root_height = num_players * button_height*  # No extra space for tight fit
 root_width = button_width * 10  # Adjust width to fit button snugly
 
 # Initialize the root window
