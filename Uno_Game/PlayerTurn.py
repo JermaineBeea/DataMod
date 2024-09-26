@@ -1,9 +1,8 @@
 import tkinter
 import numpy as np
-from Modules.GeneratePlayers import*
-from Modules.DrawCard import drawCards
-from functools import partial
 
+from Modules.DrawCard import players_generated
+from functools import partial
 
 
 def sourceFunction(name):
