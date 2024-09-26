@@ -4,8 +4,8 @@ def displayCards (cards):
   """" 
   Function to display cards 
   """
-  root_width = 700
-  root_height = 700
+  root_width = 500
+  root_height = 600
   x_shit = + 200
   y_shift = - 200
   root = tkinter.Tk()
