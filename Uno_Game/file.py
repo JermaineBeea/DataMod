@@ -15,4 +15,6 @@ label = tkinter.Label(frame, text= 'Frame label', bg = frame_back_colour, font=(
 label.pack(pady=10)
 label.config()
 
+frame.grid(row= 2, column=i%3, padx=10, pady=10)
+
 root.mainloop()
