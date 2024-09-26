@@ -70,3 +70,4 @@ if __name__ == '__main__' and run_test is True:
   list_2 = np.array(range(10))
   rand_choice = genRandId(list_1, list_2)
   print(rand_choice)
+# endregion
