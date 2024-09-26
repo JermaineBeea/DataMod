@@ -10,8 +10,7 @@ frame = tkinter.Frame(root, bg='blue', width=200, height=100,
 highlightbackground='black', highlightthickness=2, bd=2)
 frame.pack(fill='both', expand=True, pady=10)
 
-frame_text = str(card[0])
-label = tkinter.Label(frame, text=frame_text, bg='red', font=('Arial', 24))
+label = tkinter.Label(frame, text= 'Frame label', bg='red', font=('Arial', 24))
 label.pack(pady=10)
 
 root.mainloop()
