@@ -1,8 +1,8 @@
 import tkinter
 
-cards = [('act_3', 'darkred'), (4, 'darkblue'), ('act_1', 'darkblue'), ('act_3', 'darkorange'), ('act_2', 'darkorange'), (2, 'darkblue'), (7, 'grey')]
 
-def displayCards ():
+def displayCards (cards):
+  """"
   root = tkinter.Tk()
   root.geometry('400x550')
   frame_back_colour = 'darkgrey'
