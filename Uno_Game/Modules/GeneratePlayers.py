@@ -105,7 +105,7 @@ def RunMain ():
     'invalid': ['#', 'fuck', 'shit', 'crap', 'bitch', ],
     'data': [str, int],
   }
-
+  global player_names
   player_names = {}
 
   # Widget root
