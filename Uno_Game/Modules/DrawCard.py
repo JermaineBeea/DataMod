@@ -4,7 +4,7 @@ from Modules.RandGenerator import genRandId
 
 def drawCard ():
   # Variables for cards 
-  num_attribute = range(10)
+  num_attribute = list(np.arange(10).astype(str))
   colour_atrr = ['red','blue','yellow','white']
   action_attr = ['act_1', 'act_2', 'act_3']
   wild_cards = ['W_1', 'W_2', 'W_3']
