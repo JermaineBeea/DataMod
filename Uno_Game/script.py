@@ -9,7 +9,7 @@ players = {
     'susan': [(3, 'blue'), (0, 'blue'), (6, 'red'), ('act_3', 'blue')],
     'mike': [(7, 'yellow'), (0, 'red'), (0, 'white'), (3, 'blue')],
     'kyle': [(7, 'yellow'), (0, 'red'), (0, 'white'), (3, 'blue')],
-    'daniel': [(7, 'yellow'), (0, 'red'), (0, 'white'), (3, 'blue')]
+    'Danielle': [(7, 'yellow'), (0, 'red'), (0, 'white'), (3, 'blue')]
 }
 
 def sourceFunction(name):
@@ -23,7 +23,7 @@ button_width = 20
 button_height = 2  
 
 # Root dimensions based on the number of players and button dimensions
-metric = (num_players//(num_players + 1))*1000
+metric = 10
 root_height = metric*num_players*button_height  
 root_width = button_width * 10  
 
