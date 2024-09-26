@@ -2,11 +2,12 @@ import os
 import pathlib as path
 import inspect
 
+#region Info
 # Functions to Read/Write to(from) file
-
 # Using Pathlib
 # file_path = path('loc1/loc2/loc3/')
 # if file_path.exist()
+#endregion
 
 def write_toArray (file_path):
   array = []
@@ -17,7 +18,7 @@ def write_toArray (file_path):
     return array
   else: raise FileNotFoundError(f'The path {file_path} does not exist')
 
-# TODO fix pathFormat
+# TODO Fix escape characters
 def pathFormat (file_path):
   if os.path.exist(file_path):
 
