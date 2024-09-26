@@ -22,7 +22,7 @@ button_width = 20
 button_height = 2  
 
 # Root dimensions based on the number of players and button dimensions
-root_height = num_players* button_height  # No extra space for tight fit
+root_height = 50*num_players*button_height  # No extra space for tight fit
 root_width = button_width * 10  # Adjust width to fit button snugly
 
 # Initialize the root window
@@ -38,7 +38,7 @@ for player_name in players.keys():
     func = partial(sourceFunction, name=player_name)
     button = tkinter.Button(root, command=func, text=f'{player_name} \nCards', font = ('Consolas', 14), bg = 'darkred', fg='white')
     button.config(width=button_width, height=button_height)
-    button.pack(pady = 0) 
+    button.pack(pady = 5) 
 
 # Start the main loop
 root.mainloop()
