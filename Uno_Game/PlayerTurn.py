@@ -1,6 +1,6 @@
 import tkinter
 import numpy as np
-from Modules.GeneratePlayers import player_names, centerWidget
+from Modules.GeneratePlayers import*
 from functools import partial
 
 # Player data
@@ -13,6 +13,7 @@ from functools import partial
 #     'Austin': [(7, 'yellow'), (0, 'red'), (0, 'white'), (3, 'blue')]
 
 # }
+
 players = player_names #Fetched from GeneratePlayers
 
 def sourceFunction(name):
