@@ -1,13 +1,11 @@
 #from Input import *
-main_bool = __name__ = '__main__'
-
+from GeneratePlayers import *
 import numpy as np
+
 if main_bool:
   from Modules.RandGenerator import genRandId
 else: 
   from RandGenerator import genRandId
-
-from GeneratePlayers import *
 
 def drawCard ():
   """"This function draws a card using a reandom ID generator"""
@@ -72,6 +70,7 @@ def drawCards(num_cards_drawn = NUM):
 players = players_generated
 for player in players_generated.keys():
     players_generated[player] = drawCards()
+
 
 if main_bool:
   cards = drawCards(6)
