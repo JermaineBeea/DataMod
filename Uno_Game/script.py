@@ -17,9 +17,11 @@ root_height = 300
 h_shift = 0
 v_shift = -100
 
+# Root Main
 root = tkinter.Tk()
 root.title('Player Card')
 centerWidget(root, root_width, root_height, h_shift, v_shift)
 
-
+for n in lst:
+  
 root.mainloop()
