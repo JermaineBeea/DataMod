@@ -4,7 +4,6 @@ import random
 import numpy as np
 from tkinter import messagebox
 
-# Global variables for storing flag library and player names
 flag_libr = {
   "valid": ['david', 'susan', 'mathew'],
   'invalid': ['#', 'fuck', 'shit', 'crap', 'bitch'],
