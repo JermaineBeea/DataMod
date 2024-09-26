@@ -3,12 +3,10 @@ import tkinter
 
 from Modules.GeneratePlayers import centerWidget
 
-def buttonAction (num):
-  if num == 1: print('Button 1')
-  if num == 2: print('Button 2')
-  if num == 3: print('Button 3')
+def buttonAction ():
+  print('button_1')
 
-
+button
 lst = (8, 'red'), (6, 'yellow'), (8, 'blue'), (2, 'yellow')
 
 # Root Paraemeters
