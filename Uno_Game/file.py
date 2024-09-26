@@ -3,7 +3,7 @@ import tkinter
 cards = [(9, 'white'), (1, 'white'), ['W_2', 'brown'], ('act_1', 'white'), (1, 'white'), (3, 'white'), ('act_2', 'white')]
 
 root = tkinter.Tk()
-root.geometry('300x300')
+root.geometry('400x400')
 
 # FRAME 1
 # Adding black border with highlightthickness and bd
