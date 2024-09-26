@@ -1,19 +1,11 @@
-
 import tkinter
-
+from functools import partial
 from Modules.GeneratePlayers import centerWidget
 
-def button1 (n = 1):
-  print(n)
+def button1(n=1):
+    print(n)
 
-button2 = button1(n = 2)
-button3 = button1(n = 3)
-
-buttons = button1, button2, button3
- 
-lst = (8, 'red'), (6, 'yellow'), (8, 'blue'), (2, 'yellow')
-
-# Root Paraemeters
+# Root Parameters
 root_width = 300
 root_height = 300
 h_shift = 0
@@ -24,11 +16,15 @@ root = tkinter.Tk()
 root.title('Player Card')
 centerWidget(root, root_width, root_height, h_shift, v_shift)
 
-for num, button in enumerate(buttons):
-  button = tkinter.Button(root, text = f'Button {num}', command = button)
-  button.pack(pady = 30)
+# Create buttons and assign them correct commands with partial
+buttons = []
+for i in range(3):
+    button_command = partial(button1, n=i+1)  # Pass button number as n
+    button = tkinter.Button(root, text=f'Button {i+1}', command=button_command)
+    buttons.append(button)
+
+# Place buttons in the GUI
+for button in buttons:
+    button.pack(pady=30)
 
 root.mainloop()
-
-
-
