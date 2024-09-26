@@ -17,8 +17,8 @@ for player_name, cards in player.items():
 
     func = partial(sourceFunction, name = player_name)
     button = tkinter.Button(root, command = func, text = f'Player {player_name}', font = ('Consolas', 14))
-    button.geomet
-    button.pack(pady = 10)
+    button.config(width = 300)
+    button.pack(pady = 30)
 
 root.mainloop()
   
