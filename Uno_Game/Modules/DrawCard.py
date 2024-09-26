@@ -67,9 +67,9 @@ def drawCards(num_cards_drawn = NUM):
   return cards
 
 #players_generated is Fetched from GeneratePlayers
-players = players_generated
-for player in players_generated.keys():
-    players_generated[player] = drawCards()
+players_cards = players_generated
+for player in players_cards.keys():
+    players_cards[player] = drawCards()
 
 # region Test
 
