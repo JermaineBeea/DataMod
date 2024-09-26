@@ -23,26 +23,26 @@ def drawCard ():
   wild_colour = 'black'
 
   #TYPES OF CARDS
-  # colour & num
-  # Action card & colour
-  # Wild card isnt mapped with any other variable
+  # colour & num with card_type_Id 0
+  # Action card & colour with card_type_ID 1
+  # Wild card isnt mapped with any other variable with card_type_ID 2
+  
   colourNum_size = len(colour_atrr)*len(num_attribute)
   actColour_size = len(action_attr)*len(colour_atrr)
   wild_size = len(wild_cards)
   Num_unique_cards = colourNum_size + actColour_size + wild_size
-
-  Prob_a = wild_size/Num_unique_cards
-  Prob_b = actColour_size/Num_unique_cards
-  Prob_c = colourNum_size/Num_unique_cards
-
+  
+  # Probaility of drawing a Wild cards
+  Prob_wildCard = wild_size/Num_unique_cards 
+  # Probaility of drawing a card with Action and Colour characteristics
+  Prob_actionColor = actColour_size/Num_unique_cards
+  # Probaility of drawing a card with Colour and Number characteristics
+  Prob_colourNum = colourNum_size/Num_unique_cards
+  
   rand_float = np.random.random()
 
-  # Condition for wild card
-  # Colour for wild card is constant
-  # Random index serves as Intra ID
-
   # Condition for wild cards
-  if 0 <= rand_float < Prob_a:
+  if 0 <= rand_float < Prob_wildCard:
     indx = np.random.randint(low = 0, high = wild_size)
     card = wild_cards[indx]
     card = [card, wild_colour]
@@ -50,15 +50,15 @@ def drawCard ():
     unique_Id = card_type_ID, indx
 
   # Condition for card with attribute Act & colour
-  max = Prob_a + Prob_b
-  if Prob_a <= rand_float < max:
+  max = Prob_wildCard + Prob_actionColor
+  if Prob_wildCard <= rand_float < max:
     intra_Id, card = genRandId(action_attr, colour_atrr, output_Id = True)
     card_type_ID = 1
     unique_Id = card_type_ID, intra_Id
 
   # Condition for card with attribute number & colour
-  max = Prob_a + Prob_b + Prob_c
-  if Prob_a + Prob_b <= rand_float < max:
+  max = Prob_wildCard + Prob_actionColor + Prob_colourNum
+  if Prob_wildCard + Prob_actionColor <= rand_float < max:
     intra_Id, card = genRandId(num_attribute, colour_atrr, output_Id = True)
     card_type_ID = 2
     unique_Id = card_type_ID, intra_Id
