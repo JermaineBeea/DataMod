@@ -7,7 +7,7 @@ player = {'dave': [(1, 'white'), (0, 'red'), (2, 'blue'), (9, 'white')], 'susan'
 
 def sourceFunction (name):
   cards = player[name]
-  print(f'Cards for player {name} is cards')
+  print(f'Cards for player {name} \nare {cards}')
 
 
 root = tkinter.Tk()
@@ -17,6 +17,7 @@ for player_name, cards in player.items():
 
     func = partial(sourceFunction, name = player_name)
     button = tkinter.Button(root, command = func, text = f'Player {player_name}', font = ('Consolas', 14))
+    button.geomet
     button.pack(pady = 10)
 
 root.mainloop()
