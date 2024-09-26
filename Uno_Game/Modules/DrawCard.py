@@ -8,7 +8,8 @@ else:
   from Modules.RandGenerator import genRandId
   from Modules.GeneratePlayers import players_generated
 
-#Main_variables
+#_variables
+num_cards_drawn = 7
 
 def drawCard ():
   """"This function draws a card using a reandom ID generator"""
@@ -64,7 +65,7 @@ def drawCard ():
 
   return [(unique_Id), card]
 
-def drawCards(num_cards_drawn = 7):
+def drawCards(num_cards_drawn):
   cards = [drawCard()[1] for _ in range(num_cards_drawn)]
   return cards
 
