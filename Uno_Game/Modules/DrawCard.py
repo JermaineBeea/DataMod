@@ -1,5 +1,5 @@
 #from Input import *
-from GeneratePlayers import *
+from GeneratePlayers import players_generated
 import numpy as np
 
 if __name__ == '__main__':
@@ -66,15 +66,14 @@ def drawCards(num_cards_drawn = NUM):
   cards = [drawCard() for _ in range(num_cards_drawn)]
   return cards
 
-#players_generated is Fetched from GeneratePlayers
+# Main return is players_cards
+# players_generated is Fetched from GeneratePlayers
 players_cards = players_generated
 for player in players_cards.keys():
     players_cards[player] = drawCards()
 
 # region Test
-
 if __name__ == '__main__':
   cards = drawCards(6)
   print(cards)
-
 #endregion
