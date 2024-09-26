@@ -16,5 +16,5 @@ root.title('Players')
 for player_name, cards in player.items():
 
     func = partial(sourceFunction, name = player_name)
-    
+    button = tkinter.Button(root, command = func, text = 'Player {}')
   
