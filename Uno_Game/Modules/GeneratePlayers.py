@@ -99,8 +99,8 @@ def change_xy(x_change=0, y_change=0):
   cord_libr = {'relx': x_0, 'rely': y_0, 'anchor': 'center'}
   return cord_libr
 
-
-if __name__ == '__main__' and by:
+bypass_main = True
+if __name__ == '__main__' and not bypass_main:
 
   flag_libr = {
     "valid": ['david','susan','mathew'],
