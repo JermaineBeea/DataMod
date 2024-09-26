@@ -56,8 +56,10 @@ def drawCard ():
 
   return [(unique_Id), card]
 
-def drawCards(num_cards_drawn)
-  
+def drawCards(num_cards_drawn):
+  cards = [card for card in range(num_cards_drawn)]
+  return cards
+
 if __name__ == '__main__':
   
   num_card = 4
