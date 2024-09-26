@@ -62,14 +62,14 @@ def drawCard ():
 
   return [(unique_Id), card]
 
-NUM = 7
-def drawCards(num_cards_drawn = NUM):
+def drawCards(num_cards_drawn = 7):
   cards = [drawCard() for _ in range(num_cards_drawn)]
   return cards
 
 # Main return is players_cards
-# Players_generated is fetched from GeneratePlayers
-def main ():
+#
+# Main return is players_cards. Players_generated is fetched from GeneratePlayers
+def RunMain ():
   """" 
   Main return is players_cards:
   players_generated is fetched from GeneratePlayers
@@ -78,5 +78,5 @@ def main ():
   for player in players_cards.keys():
       players_cards[player] = drawCards()
 
-main ()
+RunMain()
 
