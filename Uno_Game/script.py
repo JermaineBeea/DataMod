@@ -23,6 +23,7 @@ root.title('Player Card')
 centerWidget(root, root_width, root_height, h_shift, v_shift)
 
 buttons = {}
+global num
 for num, item in enumerate(lst):
   button = tkinter.Button(root, text = f'Button {num}' ,command = buttonAction)
   button.pack(pady = 30)
