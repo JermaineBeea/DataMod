@@ -67,7 +67,8 @@ def drawCard ():
 
 def drawCards(num_cards_drawn):
   cards = [drawCard()[1] for _ in range(num_cards_drawn)]
-  return cards
+  used_Id = [drawCard()[0] for _ in range(num_cards_drawn)]
+  return cards, used_Id
 
 # Main return is players_cards. Players_generated is fetched from GeneratePlayers
 # player_cards is to be passed to DrawCrads module
@@ -79,6 +80,6 @@ def RunMain ():
   players_generated is fetched from GeneratePlayers
   """
   for player in players_cards.keys():
-      players_cards[player] = drawCards(num_cards_drawn)
+      players_cards[player] = drawCards(num_cards_drawn)[0]
 
 RunMain()
