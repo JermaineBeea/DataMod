@@ -93,7 +93,7 @@ def cancel(event = None):
   """Closes the application"""
   widget_root.destroy()
 
-def centerWidget(widget_root, root_width, root_height, hoizontal_shift, vertical_shift):
+def centerWidget(widget_root, root_width, root_height, hoizontal_shift = 0, vertical_shift = 0):
   """Centers the widget on the screen"""
   screen_width = widget_root.winfo_screenwidth()
   screen_height = widget_root.winfo_screenheight()
