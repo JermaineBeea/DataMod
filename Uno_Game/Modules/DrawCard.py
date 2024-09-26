@@ -61,6 +61,7 @@ def drawCards(num_cards_drawn):
   return cards
 
 if __name__ == '__main__':
+  from RandGenerator import genRandId
   
   cards = drawCards(6)
   print(cards)
