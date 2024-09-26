@@ -5,10 +5,11 @@ cards = [(9, 'white'), (1, 'white'), ['W_2', 'brown'], ('act_1', 'white'), (1, '
 root = tkinter.Tk()
 root.geometry('400x550')
 
-# FRAME 1
-# Adding black border with highlightthickness and bd
-for n in range(7):
-  frame_back_colour = 'darkgrey'
+
+frame_back_colour = 'darkgrey'
+for card in cards:
+  card_colour = card[1]
+  card_text = card[0]
   frame = tkinter.Frame(root, bg = frame_back_colour, width = 100, height = 150, highlightbackground='black', highlightthickness=2, bd=2)
   frame.pack_propagate(False)
 
