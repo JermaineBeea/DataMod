@@ -6,6 +6,7 @@ from DisplayCard import displayCards
 # from Modules.DrawCard import players_cards
 from functools import partial
 
+# region smaple players
 # players_cards = {
 # 'dave': [(8, 'grey'), (5, 'darkred'), ['W_2', 'black'], (5, 'darkred'), (5, 'grey'), (8, 'grey'), (7, 'darkblue')], 
 # 'susan': [(1, 'darkred'), (1, 'darkblue'), ['W_3', 'black'], (3, 'grey'), (4, 'grey'), ['W_1', 'black'], ('act_1', 'darkblue')], 
@@ -14,6 +15,7 @@ from functools import partial
 # 'pete': [['W_1', 'black'], (5, 'darkred'), (5, 'darkred'), (2, 'darkorange'), (5, 'darkblue'), (2, 'grey'), (9, 'grey')], 
 # 'dude': [(6, 'darkorange'), (8, 'darkblue'), (4, 'darkorange'), (7, 'darkblue'), (8, 'darkorange'), (3, 'darkred'), (5, 'darkred')]
 # }
+# endregion
 
 # Player cards is fetched from DrawCard Module
 def sourceFunction(cards_):
