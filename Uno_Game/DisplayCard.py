@@ -22,4 +22,3 @@ def displayCards (cards):
 
   root.mainloop()
 
-displayCards()
