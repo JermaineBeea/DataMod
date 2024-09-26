@@ -1,6 +1,7 @@
 import tkinter
 import numpy as np
 from Modules.GeneratePlayers import*
+from Modules.DrawCard import drawCards
 from functools import partial
 
 # Player data
@@ -17,7 +18,8 @@ from functools import partial
 #players_generated is Fetched from GeneratePlayers
 
 players = players_generated
-
+for player in players_generated.keys():
+    players_generated[player] = drawCards()
 def sourceFunction(name):
     cards = players[name]
     print(f'Cards for player {name} \nare {cards}')
