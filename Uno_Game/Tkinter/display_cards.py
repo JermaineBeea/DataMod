@@ -23,7 +23,7 @@ def create_card(frame, card_number, card_color):
     
     # Add the card number label inside the card frame
     card_label = tk.Label(card, text=str(card_number), font=("Arial", 24), bg=card_color, fg="white")
-    card_label.pack(expand=True)  # Center the label in the frame
+    card_label.pack(fill = 'both', expand=True)  # Center the label in the frame
 
     return card
 
