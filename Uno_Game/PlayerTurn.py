@@ -14,7 +14,7 @@ from functools import partial
 
 # }
 
-players = player_names #Fetched from GeneratePlayers
+#Fetched from GeneratePlayers
 
 def sourceFunction(name):
     cards = players[name]

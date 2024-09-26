@@ -10,7 +10,7 @@ flag_libr = {
   'invalid': ['#', 'fuck', 'shit', 'crap', 'bitch'],
   'data': [str, int],
 }
-player_names = {}
+players_generated = {}
 
 def flagFilter(user_input, flag_copy):
   """Matches user input against flag elements and returns closest match"""
@@ -52,7 +52,7 @@ def parseInput(event = None):
   user_input = input_tab.get().strip().lower()
 
   # Check if the input is a duplicate
-  user_input = checkDuplicate(user_input, list(player_names.keys()))
+  user_input = checkDuplicate(user_input, list(players_generated.keys()))
   
   if user_input is None:
     return  # Do nothing if user declined the duplicate name
@@ -72,16 +72,16 @@ def parseInput(event = None):
         if name_flag == 'invalid':
           messagebox.showwarning('INVALID ENTRY', f'Please ensure input does not contain {close_match[0].upper()}')
         elif bool_flag:
-          player_names[user_input] = []
+          players_generated[user_input] = []
         else:
           answer = messagebox.askyesno('VALIDATION', f'Were you trying to type {close_match[0]}?')
           if answer:
             user_input = close_match[0]
-            player_names[user_input] = []
+            players_generated[user_input] = []
           else: 
-            player_names[user_input] = []
+            players_generated[user_input] = []
       else:
-        player_names[user_input] = []
+        players_generated[user_input] = []
     else:
       messagebox.showerror('INVALID DATA TYPE', f'Please ensure input is of data type {flag_dtype}')
   else:
