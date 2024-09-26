@@ -62,7 +62,7 @@ def drawCard ():
   return [(unique_Id), card]
 
 def drawCards(num_cards_drawn):
-  cards = [card for card in range(num_cards_drawn)]
+  cards = [drawCard() for _ in range(num_cards_drawn)]
   return cards
 
 if main_bool:
