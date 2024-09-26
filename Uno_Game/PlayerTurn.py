@@ -6,9 +6,7 @@ from DisplayCard import displayCards
 # from Modules.DrawCard import players_cards
 from functools import partial
 
-players_cards = {'david': [('act_2', 'grey'), ('act_2', 'darkblue'), (6, 'grey'), ('act_1', 'darkred'), ('act_3', 'darkorange'), ('act_2', 'grey'), (5, 'grey')], 
- 'susan': [('act_3', 'darkred'), (4, 'darkblue'), ('act_1', 'darkblue'), ('act_3', 'darkorange'), ('act_2', 'darkorange'), (2, 'darkblue'), (7, 'grey')]} 
-
+players_cards = {'dave': [(8, 'grey'), (5, 'darkred'), ['W_2', 'black'], (5, 'darkred'), (5, 'grey'), (8, 'grey'), (7, 'darkblue')], 'susan': [(1, 'darkred'), (1, 'darkblue'), ['W_3', 'black'], (3, 'grey'), (4, 'grey'), ['W_1', 'black'], ('act_1', 'darkblue')], 'mat': [(7, 'darkorange'), (4, 'darkblue'), ('act_1', 'darkorange'), ('act_1', 'grey'), (2, 'darkred'), (6, 'darkblue'), (6, 'grey')], 'pat': [(1, 'darkred'), (7, 'darkblue'), (9, 'darkred'), (6, 'darkblue'), (9, 'darkred'), (2, 'grey'), (9, 'darkorange')], 'pete': [['W_1', 'black'], (5, 'darkred'), (5, 'darkred'), (2, 'darkorange'), (5, 'darkblue'), (2, 'grey'), (9, 'grey')], 'dude': [(6, 'darkorange'), (8, 'darkblue'), (4, 'darkorange'), (7, 'darkblue'), (8, 'darkorange'), (3, 'darkred'), (5, 'darkred')]}
 
 # Player cards is fetched from DrawCard Module
 def sourceFunction(cards_):
