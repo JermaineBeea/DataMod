@@ -100,12 +100,13 @@ def change_xy(x_change=0, y_change=0):
   return cord_libr
 
 def RunMain ():
+  global flag_libr, player_names, input_tab, widget_root
+  
   flag_libr = {
     "valid": ['david','susan','mathew'],
     'invalid': ['#', 'fuck', 'shit', 'crap', 'bitch', ],
     'data': [str, int],
   }
-  global player_names
   player_names = {}
 
   # Widget root
