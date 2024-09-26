@@ -13,6 +13,6 @@ for card in cards:
 
   frame_text = str(card[0])
   label = tkinter.Label(frame, text = frame_text, bg = frame_colour, font = ('Arial', 24))
-  label.pack(pd = 10)
+  label.pack(pady = 10)
 
 root.mainloop()
