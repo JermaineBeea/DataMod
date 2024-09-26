@@ -68,9 +68,11 @@ def drawCards(num_cards_drawn = NUM):
   return cards
 
 # Main return is players_cards
-# players_generated is fetched from GeneratePlayers
+# 
 def main ():
-  """"
+  """" Main return is players_cards
+  players_generated is fetched from GeneratePlayers"""
+
   players_cards = players_generated
   for player in players_cards.keys():
       players_cards[player] = drawCards()
