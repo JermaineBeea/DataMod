@@ -22,8 +22,9 @@ button_width = 20
 button_height = 2  
 
 # Root dimensions based on the number of players and button dimensions
-root_height = 50*num_players*button_height  # No extra space for tight fit
-root_width = button_width * 10  # Adjust width to fit button snugly
+metric = num_players*10
+root_height = metric*num_players*button_height  
+root_width = button_width * 10  
 
 # Initialize the root window
 root = tkinter.Tk()
