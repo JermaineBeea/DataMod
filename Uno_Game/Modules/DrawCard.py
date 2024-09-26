@@ -3,6 +3,7 @@ import numpy as np
 from Modules.RandGenerator import genRandId
 
 def drawCard ():
+  """" """
   # Variables for cards 
   num_attribute = list(np.arange(10).astype(str))
   colour_atrr = ['red','blue','yellow','white']
