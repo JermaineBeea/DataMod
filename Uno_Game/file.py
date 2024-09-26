@@ -10,7 +10,9 @@ root.geometry('400x400')
 frame_back_colour = 'darkgrey'
 frame = tkinter.Frame(root, bg = frame_back_colour, width=200, height=100, 
 highlightbackground='black', highlightthickness=2, bd=2)
-# frame.pack(fill='both', expand= False, pady=10)
+
+frame.pack(fill='both', expand= False, pady=10)
+
 label = tkinter.Label(frame, text= f'Uno Card\n1', bg = frame_back_colour, font=('Arial', 24))
 label.pack(pady = 10)
 frame.grid(row= 2, column=3, padx=10, pady=10)
