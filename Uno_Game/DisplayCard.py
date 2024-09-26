@@ -4,9 +4,9 @@ def displayCards (cards):
   """" 
   Function to display cards 
   """
-  root_width = 400
-  root_height = 400
-  x_shit = + 400
+  root_width = 700
+  root_height = 700
+  x_shit = + 200
   y_shift = - 200
   root = tkinter.Tk()
   frame_back_colour = 'darkgrey'
