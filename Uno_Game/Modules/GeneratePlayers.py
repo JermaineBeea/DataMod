@@ -137,7 +137,6 @@ def RunMain():
 
   widget_root.mainloop()
 
-  
 bypass_main = False
 if __name__ == '__main__':
     if not bypass_main:
