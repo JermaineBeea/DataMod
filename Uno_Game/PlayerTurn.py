@@ -4,19 +4,7 @@ from Modules.GeneratePlayers import*
 from Modules.DrawCard import drawCards
 from functools import partial
 
-# Player data
-# players = {
-#     'dave': [(1, 'white'), (0, 'red'), (2, 'blue'), (9, 'white')],
-#     'susan': [(3, 'blue'), (0, 'blue'), (6, 'red'), ('act_3', 'blue')],
-#     'mike': [(7, 'yellow'), (0, 'red'), (0, 'white'), (3, 'blue')],
-#     'kyle': [(7, 'yellow'), (0, 'red'), (0, 'white'), (3, 'blue')],
-#     'Danielle': [(7, 'yellow'), (0, 'red'), (0, 'white'), (3, 'blue')],
-#     'Austin': [(7, 'yellow'), (0, 'red'), (0, 'white'), (3, 'blue')]
-
-# }
-
 #players_generated is Fetched from GeneratePlayers
-
 players = players_generated
 for player in players_generated.keys():
     players_generated[player] = drawCards()

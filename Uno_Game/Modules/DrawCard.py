@@ -5,7 +5,7 @@ import numpy as np
 if main_bool:
   from Modules.RandGenerator import genRandId
 else: 
-  from Modules.RandGenerator import genRandId
+  from RandGenerator import genRandId
 
 def drawCard ():
   """"This function draws a card using a reandom ID generator"""
