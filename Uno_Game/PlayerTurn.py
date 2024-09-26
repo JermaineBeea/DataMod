@@ -30,7 +30,7 @@ root_width = 200
 
 # Initialize the root window
 root = tkinter.Tk()
-root.title('Players')
+root.title('')
 root.config(bg='darkgrey')
 
 # Center the window
