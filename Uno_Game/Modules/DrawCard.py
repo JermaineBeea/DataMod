@@ -8,7 +8,7 @@ else:
   from Modules.RandGenerator import genRandId
   from Modules.GeneratePlayers import players_generated
 
-#_variables
+# Variables
 num_cards_drawn = 7
 
 def drawCard ():
@@ -82,5 +82,3 @@ def RunMain ():
       players_cards[player] = drawCards()
 
 RunMain()
-
-print(players_cards)
