@@ -21,6 +21,7 @@ centerWidget(root, root_width, root_height, h_shift, v_shift)
 
 buttons = {}
 for n in lst:
-  button = tkinter.Button(root, command = buttonAction)
-  button.pack
+  button = tkinter.Button(root, text = f'' command = buttonAction)
+  button.pack(pady = 30)
+
 root.mainloop()
