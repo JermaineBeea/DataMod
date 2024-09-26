@@ -99,56 +99,56 @@ def change_xy(x_change=0, y_change=0):
   cord_libr = {'relx': x_0, 'rely': y_0, 'anchor': 'center'}
   return cord_libr
 
-bypass_main = True
-if __name__ == '__main__' and not bypass_main:
 
-  flag_libr = {
-    "valid": ['david','susan','mathew'],
-    'invalid': ['#', 'fuck', 'shit', 'crap', 'bitch', ],
-    'data': [str, int],
-  }
+#if __name__ == '__main__' :
 
-  player_names = {}
+flag_libr = {
+  "valid": ['david','susan','mathew'],
+  'invalid': ['#', 'fuck', 'shit', 'crap', 'bitch', ],
+  'data': [str, int],
+}
 
-  # Widget root
+player_names = {}
 
-  # Parameters
-  widget_colour = 'grey'
-  widget_width = 400
-  widget_height = 400
-  global_font = ('Arial', 16)
-  #shift vertical and horizontal from center
-  v_shift = -100
-  h_shift = 0
+# Widget root
 
-  widget_root = tkinter.Tk()
-  widget_root.title('USER INPUT')
-  widget_root.config(bg=widget_colour)
-  centerWidget(widget_root, widget_width, widget_height, h_shift, v_shift)
+# Parameters
+widget_colour = 'grey'
+widget_width = 400
+widget_height = 400
+global_font = ('Arial', 16)
+#shift vertical and horizontal from center
+v_shift = -100
+h_shift = 0
 
-  entry_label = tkinter.Label(widget_root, text='Enter Name below', font=global_font, bg='black', fg='white')
-  #entry_label = tkinter.Text(widget_root, width=30, height=5)
-  x_0 = 0.5
-  y_0 = 0.3
-  entry_label.place(relx=x_0, rely=y_0, anchor='center')
+widget_root = tkinter.Tk()
+widget_root.title('USER INPUT')
+widget_root.config(bg=widget_colour)
+centerWidget(widget_root, widget_width, widget_height, h_shift, v_shift)
 
-  input_tab = tkinter.Entry(widget_root, width=widget_width // 10)
-  y_0 += 0.2
-  input_tab.place(relx=x_0, rely=y_0, anchor='center')
+entry_label = tkinter.Label(widget_root, text='Enter Name below', font=global_font, bg='black', fg='white')
+#entry_label = tkinter.Text(widget_root, width=30, height=5)
+x_0 = 0.5
+y_0 = 0.3
+entry_label.place(relx=x_0, rely=y_0, anchor='center')
 
-  submit_button = tkinter.Button(widget_root, command=parseInput, text='Submit', font=global_font, bg='darkred', fg='white')
-  x_0 += -0.2
-  y_0 += 0.2
-  submit_button.place(relx=x_0, rely=y_0, anchor='center')
+input_tab = tkinter.Entry(widget_root, width=widget_width // 10)
+y_0 += 0.2
+input_tab.place(relx=x_0, rely=y_0, anchor='center')
 
-  cancel_button = tkinter.Button(widget_root, command=cancel, text='Cancel', font=global_font, bg='darkred', fg='white')
-  x_0 += 0.4
-  cancel_button.place(relx=x_0, rely=y_0, anchor='center')
+submit_button = tkinter.Button(widget_root, command=parseInput, text='Submit', font=global_font, bg='darkred', fg='white')
+x_0 += -0.2
+y_0 += 0.2
+submit_button.place(relx=x_0, rely=y_0, anchor='center')
 
-  widget_root.bind('<Return>', parseInput)
-  widget_root.bind('<Escape>', cancel)
-  # widget_root.bind('exit', cancel)
+cancel_button = tkinter.Button(widget_root, command=cancel, text='Cancel', font=global_font, bg='darkred', fg='white')
+x_0 += 0.4
+cancel_button.place(relx=x_0, rely=y_0, anchor='center')
 
-  widget_root.mainloop()
+widget_root.bind('<Return>', parseInput)
+widget_root.bind('<Escape>', cancel)
+# widget_root.bind('exit', cancel)
 
-  print(player_names)
+widget_root.mainloop()
+
+print(player_names)
