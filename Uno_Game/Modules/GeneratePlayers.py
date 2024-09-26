@@ -139,4 +139,5 @@ def RunMain():
 
   widget_root.mainloop()
 
-RunMain()
+if __name__ == '__main__':
+  RunMain()
