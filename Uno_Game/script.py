@@ -16,7 +16,7 @@ button_width = 5
 button_height = 5
 
 # Root Main config variables
-root_height = 200
+root_height = 600
 root_width = 300
 x_shift = 0
 y_shift = -100
@@ -30,7 +30,7 @@ for player_name, cards in players.items():
 
     func = partial(sourceFunction, name = player_name)
     button = tkinter.Button(root, command = func, text = f'{player_name} \nCards', font = ('Consolas', 14), bg = 'darkred', fg = 'white')
-    # button.config(width = button_width, height= button_height)
+    button.config(width = button_width, height= button_height)
     button.pack(pady = 30)
 
 root.mainloop()
