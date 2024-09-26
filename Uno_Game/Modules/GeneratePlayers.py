@@ -10,6 +10,7 @@ flag_libr = {
   'invalid': ['#', 'fuck', 'shit', 'crap', 'bitch'],
   'data': [str, int],
 }
+# Main Return is players_generated to be passed to other file
 players_generated = {}
 
 def flagFilter(user_input, flag_copy):
