@@ -16,8 +16,8 @@ button_width = 5
 button_height = 5
 
 # Root Main config variables
-root_height = 100*button_num_players
-root_width = 300
+root_height = 100*button_height*num_players
+root_width = 100*button_width
 x_shift = 0
 y_shift = -100
 
