@@ -100,7 +100,7 @@ def change_xy(x_change=0, y_change=0):
   return cord_libr
 
 
-if __name__ == '__main__':
+if __name__ == '__main__' and by:
 
   flag_libr = {
     "valid": ['david','susan','mathew'],
