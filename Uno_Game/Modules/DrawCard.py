@@ -61,7 +61,8 @@ def drawCard ():
 
   return [(unique_Id), card]
 
-def drawCards(num_cards_drawn):
+NUM = 7
+def drawCards(num_cards_drawn = NUM):
   cards = [drawCard() for _ in range(num_cards_drawn)]
   return cards
 

@@ -20,6 +20,9 @@ from functools import partial
 players = players_generated
 for player in players_generated.keys():
     players_generated[player] = drawCards()
+
+print
+
 def sourceFunction(name):
     cards = players[name]
     print(f'Cards for player {name} \nare {cards}')
