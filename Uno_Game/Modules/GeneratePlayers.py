@@ -10,7 +10,8 @@ flag_libr = {
   'invalid': ['#', 'fuck', 'shit', 'crap', 'bitch'],
   'data': [str, int],
 }
-# Main Return is players_generated to be passed to other file
+
+# player_generated is to be passed to DrawCrads module
 players_generated = {}
 
 def flagFilter(user_input, flag_copy):
