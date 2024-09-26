@@ -23,7 +23,7 @@ button_width = 20
 button_height = 2  
 
 # Root dimensions based on the number of players and button dimensions
-metric = ((num_players + 1)/num_players)*10
+metric = (num_players//(num_players + 1))*1000
 root_height = metric*num_players*button_height  
 root_width = button_width * 10  
 
