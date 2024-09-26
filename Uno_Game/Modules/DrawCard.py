@@ -1,11 +1,12 @@
 #from Input import *
-from GeneratePlayers import players_generated
 import numpy as np
 
 if __name__ == '__main__':
   from Modules.RandGenerator import genRandId
 else: 
-  from RandGenerator import genRandId
+  from Modules.RandGenerator import genRandId
+  from Modules.GeneratePlayers import players_generated
+
 
 def drawCard ():
   """"This function draws a card using a reandom ID generator"""
