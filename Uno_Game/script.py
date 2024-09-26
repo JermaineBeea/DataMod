@@ -29,7 +29,7 @@ centerWidget(root, root_width, root_height, x_shift, y_shift )
 for player_name, cards in players.items():
 
     func = partial(sourceFunction, name = player_name)
-    button = tkinter.Button(root, command = func, text = f'{player_name} Cards', font = ('Consolas', 14), bg = 'darkred', fg = 'white')
+    button = tkinter.Button(root, command = func, text = f'{player_name} \nCards', font = ('Consolas', 14), bg = 'darkred', fg = 'white')
     # button.config(width = button_width, height= button_height)
     button.pack(pady = 30)
 
