@@ -39,7 +39,7 @@ for player_name in players.keys():
     func = partial(sourceFunction, name=player_name)
     button = tkinter.Button(root, command=func, text=f'{player_name} \nCards', font = ('Consolas', 14), bg = 'darkred', fg='white')
     button.config(width=button_width, height=button_height)
-    button.pack(fill= ('x','y',  expand= True) 
+    button.pack(fill= 'both',  expand= True) 
 
 # Start the main loop
 root.mainloop()
