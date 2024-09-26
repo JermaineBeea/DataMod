@@ -5,5 +5,11 @@ player = {'dave': [(1, 'white'), (0, 'red'), (2, 'blue'), (9, 'white')], 'susan'
 
 def sourceFunction (name):
   cards = player[name]
-  print(f'Card')
+  print(f'Cards for player {name} is cards')
+
+
+root = tkinter.Tk()
+root.title('Players')
+
+
   
