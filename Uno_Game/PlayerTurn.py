@@ -16,8 +16,8 @@ from functools import partial
 # }
 
 # Player cards is fetched from DrawCard Module
-def sourceFunction(cards_):
-    displayCards(cards_)
+def sourceFunction(root, cards_):
+    displayCards(root, cards_)
 
 # Global Button configuration variables
 button_width = 20  
