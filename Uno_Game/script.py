@@ -19,15 +19,13 @@ root_height = 300
 h_shift = 0
 v_shift = -100
 
+f
 # Root Main
 root = tkinter.Tk()
 root.title('Player Card')
 centerWidget(root, root_width, root_height, h_shift, v_shift)
 
-
-global num
-for num, button in enumerate(buttons):
-  button = tkinter.Button(root, text = f'Button {num}' ,command = button)
-  button.pack(pady = 30)
+button = tkinter.Button(root, text = f'Button {num}', command = button)
+button.pack(pady = 30)
 
 root.mainloop()
