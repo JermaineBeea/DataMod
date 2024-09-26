@@ -9,7 +9,6 @@ def sourceFunction(name):
     cards = players_cards[name]
     print(f'Cards for player {name} \nare {cards}')
 
-num_players = len(players_cards)
 
 # Global Button configuration variables
 button_width = 20  
@@ -20,6 +19,8 @@ text_colour = 'white'
 # Root dimensions based on the number of players and button dimensions
 root_height = 400
 root_width = 200
+x_shit = -200
+y_shift = -100
 
 # Initialize the root window
 root = tkinter.Tk()
@@ -27,7 +28,7 @@ root.title('CHOOSE A PLAYER TO GO NEXT')
 root.config(bg='darkgrey')
 
 # Center the window
-centerWidget(root, root_width, root_height)
+centerWidget(root, root_width, root_height, x_shit, y_shift)
 
 # Create and pack buttons for each player
 for player_name in players_cards.keys():
