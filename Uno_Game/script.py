@@ -1,3 +1,6 @@
 
-lst = (2, 'red'), (0, 'blue'), (0, 'blue'), (4, 'red')
+lst = (8, 'red'), (6, 'yellow'), (8, 'blue'), (2, 'yellow')
+
+
+
 
