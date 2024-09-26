@@ -2,8 +2,10 @@
 main_bool = __name__ = '__main__'
 
 import numpy as np
-if main_bool: from 
-from Modules.RandGenerator import genRandId
+if main_bool:
+  from RandGenerator import genRandId
+else: 
+  from Modules.RandGenerator import genRandId
 
 def drawCard ():
   """"This function draws a card using a reandom ID generator"""
@@ -63,7 +65,6 @@ def drawCards(num_cards_drawn):
   cards = [card for card in range(num_cards_drawn)]
   return cards
 
-if __name__ == '__main__':
-
+if main_bool:
   cards = drawCards(6)
   print(cards)
