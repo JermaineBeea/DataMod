@@ -11,7 +11,8 @@ frame = tkinter.Frame(root, bg = frame_back_colour, width=200, height=100,
 highlightbackground='black', highlightthickness=2, bd=2)
 frame.pack(fill='both', expand=True, pady=10)
 
-label = tkinter.Label(frame, text= 'Frame label', bg= 'blue', font=('Arial', 24))
+label = tkinter.Label(frame, text= 'Frame label', bg = frame_back_colour, font=('Arial', 24))
 label.pack(pady=10)
+label.config()
 
 root.mainloop()
