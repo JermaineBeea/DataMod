@@ -6,13 +6,13 @@ from DisplayCard import displayCards
 # from Modules.DrawCard import players_cards
 from functools import partial
 
-# players_cards = {'david': [('act_2', 'grey'), ('act_2', 'darkblue'), (6, 'grey'), ('act_1', 'darkred'), ('act_3', 'darkorange'), ('act_2', 'grey'), (5, 'grey')], 
-#  'susan': [('act_3', 'darkred'), (4, 'darkblue'), ('act_1', 'darkblue'), ('act_3', 'darkorange'), ('act_2', 'darkorange'), (2, 'darkblue'), (7, 'grey')]} 
+players_cards = {'david': [('act_2', 'grey'), ('act_2', 'darkblue'), (6, 'grey'), ('act_1', 'darkred'), ('act_3', 'darkorange'), ('act_2', 'grey'), (5, 'grey')], 
+ 'susan': [('act_3', 'darkred'), (4, 'darkblue'), ('act_1', 'darkblue'), ('act_3', 'darkorange'), ('act_2', 'darkorange'), (2, 'darkblue'), (7, 'grey')]} 
 
 
 # Player cards is fetched from DrawCard Module
-def sourceFunction(cards = cards_drawn):
-    displayCards(cards_drawn)
+def sourceFunction(cards_):
+    displayCards(cards_)
 
 # Global Button configuration variables
 button_width = 20  
@@ -36,7 +36,7 @@ centerWidget(root, root_width, root_height, x_shit, y_shift)
 
 # Create and pack buttons for each player
 for player_name, cards_drawn in players_cards.items():
-    func = partial(sourceFunction, cards = cards_drawn)
+    func = partial(sourceFunction, displayCards = cards_drawn)
     button = tkinter.Button(root, command=func, text=f'{player_name.upper()} \n Display Cards', font = ('Consolas', 14), bg = button_colour, fg = text_colour)
     button.config(width=button_width, height=button_height)
     button.pack(fill= 'both',  expand= True) 
