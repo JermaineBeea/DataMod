@@ -1,5 +1,4 @@
 import tkinter
-import numpy as np
 from Modules.GeneratePlayers import centerWidget  # Ensure this module is correctly imported
 from functools import partial
 
@@ -17,28 +16,27 @@ def sourceFunction(name):
 num_players = len(players)
 
 # Global Button configuration variables
-button_width = 5
-button_height = 5
+button_width = 20  # Adjust width if necessary
+button_height = 2  # Reduced height for tighter fit
 
 # Root dimensions based on the number of players and button dimensions
-root_height = (button_height + 1) * num_players  # Adjust height for spacing
-root_width = button_width * 100   # Add extra space for aesthetics
-
-# Centering offsets
-x_shift = 0
-y_shift = -100
+root_height = num_players * button_height  # No extra space for tight fit
+root_width = button_width * 10  # Adjust width to fit button snugly
 
 # Initialize the root window
 root = tkinter.Tk()
 root.title('Players')
-root.config(bg ='darkgrey')
-centerWidget(root, root_width, root_height, x_shift, y_shift)
+root.config(bg='darkgrey')
 
+# Center the window
+centerWidget(root, root_width, root_height)
 
+# Create and pack buttons for each player
 for player_name in players.keys():
     func = partial(sourceFunction, name=player_name)
-    button = tkinter.Button(root, command=func, text=f'{player_name} \nCards', font =( 'Consolas', 14), bg = 'darkred', fg = 'white')
+    button = tkinter.Button(root, command=func, text=f'{player_name} \nCards', font = ('Consolas', 14), bg = 'darkred', fg='white')
     button.config(width=button_width, height=button_height)
-    button.pack(pady=10)  
+    button.pack(pady = 0) 
 
+# Start the main loop
 root.mainloop()
