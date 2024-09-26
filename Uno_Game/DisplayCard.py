@@ -1,7 +1,7 @@
 import tkinter
 from Modules.GeneratePlayers import centerWidget
 
-# current_root to track the current window open when Player button is pressed inPlayerTurn
+# current_root to track the current window open when Player button is pressed in PlayerTurn
 current_root = None
 
 def displayCards(cards):
