@@ -6,12 +6,12 @@ def displayCards (cards):
   """
   root_width = 400
   root_height = 400
-  x_shit = + 600
+  x_shit = + 400
   y_shift = - 200
   root = tkinter.Tk()
   frame_back_colour = 'darkgrey'
-  root.geometry(f'{root_width}x{root_height}')
-  # centerWidget(root,root_width, root_height, x_shit, y_shift)
+ #root.geometry(f'{root_width}x{root_height}')
+  centerWidget(root,root_width, root_height, x_shit, y_shift)
 
   for n,card in enumerate(cards):
     card_colour = card[1]
