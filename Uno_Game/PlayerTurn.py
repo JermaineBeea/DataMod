@@ -4,10 +4,9 @@ from Modules.GeneratePlayers import centerWidget
 # from Modules.DrawCard import players_cards
 from functools import partial
 
-players_cards = {
-{'david': [('act_2', 'grey'), ('act_2', 'darkblue'), (6, 'grey'), ('act_1', 'darkred'), ('act_3', 'darkorange'), ('act_2', 'grey'), (5, 'grey')], 
+players_cards = {'david': [('act_2', 'grey'), ('act_2', 'darkblue'), (6, 'grey'), ('act_1', 'darkred'), ('act_3', 'darkorange'), ('act_2', 'grey'), (5, 'grey')], 
  'susan': [('act_3', 'darkred'), (4, 'darkblue'), ('act_1', 'darkblue'), ('act_3', 'darkorange'), ('act_2', 'darkorange'), (2, 'darkblue'), (7, 'grey')]} 
- }
+
 
 # Player cards is fetched from DrawCard Module
 def sourceFunction(name):
