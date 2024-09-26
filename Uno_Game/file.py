@@ -3,4 +3,7 @@ import tkinter
 
 root = tkinter.Tk()
 
-frame = tkinter.Frame(root, bg = 'red', )
+frame = tkinter.Frame(root, bg = 'red')
+
+label = tkinter.Label(frame)
+root.mainloop()
