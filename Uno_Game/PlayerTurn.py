@@ -4,6 +4,7 @@ from Modules.GeneratePlayers import centerWidget
 from Modules.DrawCard import players_cards
 from functools import partial
 
+
 # Player cards is fetched from DrawCard Module
 def sourceFunction(name):
     cards = players_cards[name]
