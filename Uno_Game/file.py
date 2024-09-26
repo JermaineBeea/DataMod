@@ -12,7 +12,7 @@ frame = tkinter.Frame(root, bg = frame_back_colour, width=200, height=100,
 highlightbackground='black', highlightthickness=2, bd=2)
 frame.pack_propagate(True)
 
-label = tkinter.Label(frame, text= f'1', bg = frame_back_colour, font=('Arial', 24))
+label = tkinter.Label(frame, text= f'1', bg = 'red', font=('Arial', 24))
 label.pack(fill = 'both', expand = True)
 
 frame.grid(row= 2, column=3, padx=10, pady=10)
@@ -24,7 +24,7 @@ frame2 = tkinter.Frame(root, bg = frame_back_colour, width=200, height=100,
 highlightbackground='black', highlightthickness=2, bd=2)
 frame.pack_propagate(True)
 
-label = tkinter.Label(frame2, text= f'2', bg = frame_back_colour, font=('Arial', 24))
+label = tkinter.Label(frame2, text= f'2', bg = 'red', font=('Arial', 24))
 label.pack(fill = 'both', expand = True)
 
 frame2.grid(row= 3, column=2, padx=10, pady=10)
