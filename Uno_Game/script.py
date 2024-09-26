@@ -16,8 +16,8 @@ root.title('Players')
 for player_name, cards in player.items():
 
     func = partial(sourceFunction, name = player_name)
-    button = tkinter.Button(root, command = func, text = f'Player {player_name}', font = ('Consolas', 14))
-    button.config(width = 300)
+    button = tkinter.Button(root, command = func, text = f'Player {player_name} Cards', font = ('Consolas', 14), )
+    button.config(width = 10, height= 10)
     button.pack(pady = 30)
 
 root.mainloop()
