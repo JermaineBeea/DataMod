@@ -4,6 +4,6 @@ from Modules.DrawCard import*
 num_cards =  4
 drawCards = lambda: [drawCard()[1] for _ in range(num_cards)]
 for player in players_generated:
-  player_names[player] = drawCards()
+  players_generated[player] = drawCards()
 
 
