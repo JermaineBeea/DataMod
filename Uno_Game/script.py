@@ -1,6 +1,6 @@
 import tkinter
 import numpy as np
-from Modules.RandGenerator import 
+from Modules.GeneratePlayers import centerWidget
 from functools import partial
 
 player = {'dave': [(1, 'white'), (0, 'red'), (2, 'blue'), (9, 'white')], 'susan': [(3, 'blue'), (0, 'blue'), (6, 'red'), ('act_3', 'blue')], 'mike': [(7, 'yellow'), (0, 'red'), (0, 'white'), (3, 'blue')]}
@@ -10,10 +10,12 @@ def sourceFunction (name):
   print(f'Cards for player {name} \nare {cards}')
 
 
+# Root Main config variables
+root_width = 300
 root = tkinter.Tk()
 root.title('Players')
 root.config(bg = 'darkgrey')
-root
+centerWidget(root, )
 
 for player_name, cards in player.items():
 
