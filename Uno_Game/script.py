@@ -5,7 +5,9 @@ from Modules.GeneratePlayers import centerWidget
 
 def buttonAction (num):
   if num == 1: print('Button 1')
-  if 
+  if num == 2: print('Button 2')
+  if num == 3: print('Button 3')
+
 
 lst = (8, 'red'), (6, 'yellow'), (8, 'blue'), (2, 'yellow')
 
