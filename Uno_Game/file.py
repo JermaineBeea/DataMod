@@ -12,7 +12,7 @@ for n in range(7):
   frame = tkinter.Frame(root, bg = frame_back_colour, width = 100, height = 150, highlightbackground='black', highlightthickness=2, bd=2)
   frame.pack_propagate(False)
 
-  label = tkinter.Button(frame, text= f'1', bg = 'red', font=('Arial', 24))
+  label = tkinter.Label(frame, text= f'1', bg = 'red', font=('Arial', 24))
   label.pack(fill = 'both', expand = True)
 
   frame.grid(row=n//3, column=n%3, padx=10, pady=10)
