@@ -18,11 +18,13 @@ button_height = 5
 # Root Main config variables
 root_height = (button_height + 20)*num_players
 root_width = 2*button_width
+x_shift = 0
+y_shift = -100
 
 root = tkinter.Tk()
 root.title('Players')
 root.config(bg = 'darkgrey')
-centerWidget(root, roo)
+centerWidget(root, root_width, root_height, x_shift, y_shift )
 
 for player_name, cards in players.items():
 
