@@ -16,7 +16,7 @@ button_width = 5
 button_height = 5
 
 # Root Main config variables
-root_height = 400
+root_height = 200
 root_width = 300
 x_shift = 0
 y_shift = -100
