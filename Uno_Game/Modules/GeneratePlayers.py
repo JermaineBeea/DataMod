@@ -151,4 +151,4 @@ widget_root.bind('<Escape>', cancel)
 
 widget_root.mainloop()
 
-print(player_names)
+
