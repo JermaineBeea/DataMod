@@ -1,13 +1,18 @@
 import tkinter
 import numpy as np
-from Modules.GeneratePlayers import centerWidget
+from Modules.GeneratePlayers import centerWidget  # Ensure this module is correctly imported
 from functools import partial
 
-players = {'dave': [(1, 'white'), (0, 'red'), (2, 'blue'), (9, 'white')], 'susan': [(3, 'blue'), (0, 'blue'), (6, 'red'), ('act_3', 'blue')], 'mike': [(7, 'yellow'), (0, 'red'), (0, 'white'), (3, 'blue')]}
+# Player data
+players = {
+    'dave': [(1, 'white'), (0, 'red'), (2, 'blue'), (9, 'white')],
+    'susan': [(3, 'blue'), (0, 'blue'), (6, 'red'), ('act_3', 'blue')],
+    'mike': [(7, 'yellow'), (0, 'red'), (0, 'white'), (3, 'blue')]
+}
 
-def sourceFunction (name):
-  cards = players[name]
-  print(f'Cards for player {name} \nare {cards}')
+def sourceFunction(name):
+    cards = players[name]
+    print(f'Cards for player {name} \nare {cards}')
 
 num_players = len(players)
 
@@ -15,23 +20,28 @@ num_players = len(players)
 button_width = 5
 button_height = 5
 
-# Root Main config variables
-root_height = 100*button_height*num_players
-root_width = 100*button_width
+# Calculate Root dimensions based on the number of players and button dimensions
+root_height = (button_height + 1) * num_players * 30  # Adjust height for spacing
+root_width = button_width * 100 + 50  # Add extra space for aesthetics
+
+# Centering offsets
 x_shift = 0
 y_shift = -100
 
+# Initialize the root window
 root = tkinter.Tk()
 root.title('Players')
-root.config(bg = 'darkgrey')
-centerWidget(root, root_width, root_height, x_shift, y_shift )
+root.config(bg='darkgrey')
 
-for player_name, cards in players.items():
+# Center the window
+centerWidget(root, root_width, root_height, x_shift, y_shift)
 
-    func = partial(sourceFunction, name = player_name)
-    button = tkinter.Button(root, command = func, text = f'{player_name} \nCards', font = ('Consolas', 14), bg = 'darkred', fg = 'white')
-    button.config(width = button_width, height= button_height)
-    button.pack(pady = 30)
+# Create and pack buttons for each player
+for player_name in players.keys():
+    func = partial(sourceFunction, name=player_name)
+    button = tkinter.Button(root, command=func, text=f'{player_name} \nCards', font=('Consolas', 14), bg='darkred', fg='white')
+    button.config(width=button_width, height=button_height)
+    button.pack(pady=10)  # Adjust padding for better spacing
 
+# Start the main loop
 root.mainloop()
-  
