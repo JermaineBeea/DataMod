@@ -49,7 +49,7 @@ def genRandId(set_1, set_2, unique_Id=None, output_Id=False):
   productMap_size = set_size * numSize
 
   # Generate the unique ID if not provided
-  unique_Id = random.randint(0, productMap_size) if unique_Id is None else unique_Id
+  unique_Id = random.randint(0, productMap_size - 1) if unique_Id is None else unique_Id
   
   # Compute the index for set_1 and set_2 using modular arithmetic
   set1_indx, set2_indx = modulos(numSize, unique_Id)
