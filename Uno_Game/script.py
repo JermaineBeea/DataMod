@@ -24,13 +24,13 @@ y_shift = -100
 root = tkinter.Tk()
 root.title('Players')
 root.config(bg = 'darkgrey')
-centerWidget(root, root_width, root_height, x_shift, y_shift )
+#centerWidget(root, root_width, root_height, x_shift, y_shift )
 
 for player_name, cards in players.items():
 
     func = partial(sourceFunction, name = player_name)
     button = tkinter.Button(root, command = func, text = f'Player {player_name} Cards', font = ('Consolas', 14), bg = 'darkred', fg = 'white')
-    button.config(width = button_width, height= button_height)
+    # button.config(width = button_width, height= button_height)
     button.pack(pady = 30)
 
 root.mainloop()
