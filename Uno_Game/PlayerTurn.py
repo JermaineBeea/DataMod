@@ -21,7 +21,7 @@ def sourceFunction(cards_):
 
 # Global Button configuration variables
 button_width = 20  
-button_height =   
+button_height = 4  
 button_colour = 'darkred'
 text_colour = 'white'
 
