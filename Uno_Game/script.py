@@ -1,14 +1,10 @@
 
 import tkinter
 
-from
-def centerWidget(widget_root, root_width, root_height, hoizontal_shift, vertical_shift):
-  screen_width = widget_root.winfo_screenwidth()
-  screen_height = widget_root.winfo_screenheight()
-  x = (screen_width // 2) - (root_width // 2) + hoizontal_shift
-  y = (screen_height // 2) - (root_height // 2) + vertical_shift
-  widget_root.geometry(f"{root_width}x{root_height}+{x}+{y}")
+from Modules.GeneratePlayers import centerWidget
 
+def buttonAction ():
+  pass
 
 lst = (8, 'red'), (6, 'yellow'), (8, 'blue'), (2, 'yellow')
 
@@ -25,5 +21,6 @@ centerWidget(root, root_width, root_height, h_shift, v_shift)
 
 buttons = {}
 for n in lst:
-  button = tkinter.Button(root, command = )
+  button = tkinter.Button(root, command = buttonAction)
+  button.pack
 root.mainloop()
