@@ -79,6 +79,6 @@ def RunMain ():
   players_generated is fetched from GeneratePlayers
   """
   for player in players_cards.keys():
-      players_cards[player] = drawCards()
+      players_cards[player] = drawCards(num_cards_drawn)
 
 RunMain()
