@@ -29,8 +29,8 @@ text_colour = 'white'
 # Root dimensions based on the number of players and button dimensions
 root_height = 400
 root_width = 200
-x_shit = -600
-y_shift = -200
+x_shit = - 600
+y_shift = - 200
 
 # Initialize the root window
 root = tkinter.Tk()
