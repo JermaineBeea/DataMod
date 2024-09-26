@@ -20,8 +20,8 @@ root.title('Player Card')
 centerWidget(root, root_width, root_height, h_shift, v_shift)
 
 buttons = {}
-for n in lst:
-  button = tkinter.Button(root, text = f'' command = buttonAction)
+for n, item in enumerate(lst):
+  button = tkinter.Button(root, text = f'Button {n}' ,command = buttonAction)
   button.pack(pady = 30)
 
 root.mainloop()
