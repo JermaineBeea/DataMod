@@ -23,7 +23,6 @@ def displayCards(cards):
     for n, card in enumerate(cards):
         card_colour = card[1]
         card_text = card[0]
-        
         frame = tkinter.Frame(root, bg=frame_back_colour, width=100, height=150, highlightbackground='black', highlightthickness=2, bd=1)
         frame.pack_propagate(False)
 
