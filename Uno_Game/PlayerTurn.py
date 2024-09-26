@@ -9,7 +9,9 @@ players = {
     'susan': [(3, 'blue'), (0, 'blue'), (6, 'red'), ('act_3', 'blue')],
     'mike': [(7, 'yellow'), (0, 'red'), (0, 'white'), (3, 'blue')],
     'kyle': [(7, 'yellow'), (0, 'red'), (0, 'white'), (3, 'blue')],
-    'Danielle': [(7, 'yellow'), (0, 'red'), (0, 'white'), (3, 'blue')]
+    'Danielle': [(7, 'yellow'), (0, 'red'), (0, 'white'), (3, 'blue')],
+    'Austin': [(7, 'yellow'), (0, 'red'), (0, 'white'), (3, 'blue')]
+
 }
 
 def sourceFunction(name):
@@ -21,7 +23,7 @@ num_players = len(players)
 # Global Button configuration variables
 button_width = 20  
 button_height = 2  
-button_colour = 'darkblue'
+button_colour = 'darkred'
 text_colour = 'white'
 
 # Root dimensions based on the number of players and button dimensions
@@ -30,7 +32,7 @@ root_width = 200
 
 # Initialize the root window
 root = tkinter.Tk()
-root.title('')
+root.title('CHOOSE A PLAYER TO GO NEXT')
 root.config(bg='darkgrey')
 
 # Center the window
