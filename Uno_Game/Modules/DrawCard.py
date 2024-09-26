@@ -2,7 +2,7 @@
 from GeneratePlayers import *
 import numpy as np
 
-if main_bool:
+if __name__ == '__main__':
   from Modules.RandGenerator import genRandId
 else: 
   from RandGenerator import genRandId
@@ -71,7 +71,10 @@ players = players_generated
 for player in players_generated.keys():
     players_generated[player] = drawCards()
 
+# region Test
 
-if main_bool:
+if __name__ == '__main__':
   cards = drawCards(6)
   print(cards)
+
+#endregion
