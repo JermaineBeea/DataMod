@@ -1,6 +1,6 @@
 import tkinter
 
-cards = [(9, 'white'), (1, 'white'), ['W_2', 'brown'], ('act_1', 'white'), (1, 'white'), (3, 'white'), ('act_2', 'white')]
+cards = [('act_3', 'white'), (0, 'yellow'), ['W_1', 'brown'], (0, 'white'), ['W_2', 'brown'], ('act_1', 'yellow'), (1, 'red')]
 
 def displayCards ():
   root = tkinter.Tk()
@@ -20,3 +20,5 @@ def displayCards ():
     frame.grid(row=n//3, column=n%3, padx=10, pady=10)
 
   root.mainloop()
+
+displayCards()
