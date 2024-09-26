@@ -1,12 +1,13 @@
 import tkinter
-
+from Modules.GeneratePlayers import centerWidget
 def displayCards (cards):
   """" 
   Function to display cards 
   """
+  root_width = 400
   root = tkinter.Tk()
-  root.geometry('400x550')
   frame_back_colour = 'darkgrey'
+  centerWidget(root, )
 
   for n,card in enumerate(cards):
     card_colour = card[1]
