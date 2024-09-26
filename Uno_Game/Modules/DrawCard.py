@@ -63,7 +63,7 @@ def drawCard ():
   return [(unique_Id), card]
 
 def drawCards(num_cards_drawn = 7):
-  cards = [drawCard() for _ in range(num_cards_drawn)]
+  cards = [drawCard()[1] for _ in range(num_cards_drawn)]
   return cards
 
 # Main return is players_cards. Players_generated is fetched from GeneratePlayers
