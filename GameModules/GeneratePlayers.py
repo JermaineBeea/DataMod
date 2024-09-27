@@ -99,11 +99,8 @@ def parseInput(event = None):
           players_generated[user_input] = []
         else:
           answer = messagebox.askyesno('VALIDATION', f'Were you trying to type {close_match[0]}?')
-          if answer:
-            user_input = close_match[0]
-            players_generated[user_input] = []
-          else: 
-            players_generated[user_input] = []
+          user_input = close_match[0] if answer else user_input
+          players_generated[user_input] = []
       else:
         players_generated[user_input] = []
     else:
