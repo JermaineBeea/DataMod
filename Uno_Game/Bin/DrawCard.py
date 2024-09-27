@@ -4,7 +4,7 @@ if __name__ == '__main__':
   from GeneratePlayers import players_generated
 else:
   from Modules.RandGenerator import genRandId
-  from Modules.GeneratePlayers import players_generated
+  from GeneratePlayers import players_generated
 
 
 # Variables

@@ -1,9 +1,7 @@
-from Modules.GeneratePlayers import*
-from Modules.DrawCard import*
+from GameModules.GeneratePlayers import RunGeneratePlayers
+from GameModules.DrawCard import RunDrawCards
+from GameModules.PlayerTurn import RunPlayerTurn
 
-num_cards =  4
-drawCards = lambda: [drawCard()[1] for _ in range(num_cards)]
-for player in players_generated:
-  players_generated[player] = drawCards()
-
-
+RunGeneratePlayers()
+RunDrawCards()
+RunPlayerTurn()

@@ -2,25 +2,47 @@ import difflib
 import tkinter
 import random
 import numpy as np
+
 from tkinter import messagebox
+from Modules.ReadWrite import write_toArray
 
 # Global variables for storing flag library and player names
+file_path = r'Docs/profanities.txt'
+profanities = write_toArray(file_path)
 flag_libr = {
   "valid": ['david', 'susan', 'mathew'],
-  'invalid': ['#', 'fuck', 'shit', 'crap', 'bitch'],
+  'invalid': profanities,
   'data': [str, int],
 }
+
+## The cutoff threshold (0.7) used in flagFilter for close match validation
+MATCH_ratio = 0.9
 
 # player_generated is to be passed to DrawCrads module
 players_generated = {}
 
 def flagFilter(user_input, flag_copy):
-  """Matches user input against flag elements and returns closest match"""
+  """
+  Matches user input against elements in flag_copy and returns the closest match.
+
+  Args:
+    user_input (str): The input string provided by the user.
+    flag_copy (dict): Dictionary of flag categories and their possible values.
+
+  Returns:
+    tuple: (closest match, flag category name)
+      - closest match: The closest matching element from flag_copy based on the cutoff ratio (0.7).
+      - flag category name: The name of the category (e.g., 'invalid') in which the match was found.
+
+  The function uses difflib.get_close_matches with a cutoff of 0.7 to find close matches 
+  for the user input. If a match is found in the 'invalid' flag category, it is returned 
+  immediately. Otherwise, the first match found is returned.
+  """
   return_match = ''
   return_name = ''
   instance = False
   for flag_name, flag_elements in flag_copy.items():
-    flag_match = difflib.get_close_matches(user_input, flag_elements, cutoff=0.7, n=1)
+    flag_match = difflib.get_close_matches(user_input, flag_elements, cutoff = MATCH_ratio, n=1)
     if flag_match and flag_name == 'invalid':
       return flag_match, flag_name
     elif flag_match and not instance:
@@ -103,7 +125,7 @@ def centerWidget(widget_root, root_width, root_height, hoizontal_shift = 0, vert
   y = (screen_height // 2) - (root_height // 2) + vertical_shift
   widget_root.geometry(f"{root_width}x{root_height}+{x}+{y}")
 
-def RunMain():
+def RunGeneratePlayers():
   """Main function to run the application"""
   global input_tab, widget_root
 
@@ -139,4 +161,4 @@ def RunMain():
 
   widget_root.mainloop()
 
-RunMain()
+

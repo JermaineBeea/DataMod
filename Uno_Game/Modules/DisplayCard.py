@@ -1,5 +1,5 @@
 import tkinter
-from Modules.GeneratePlayers import centerWidget
+from GameModules.GeneratePlayers import centerWidget
 
 # current_root to track the current window open when Player button is pressed in PlayerTurn
 current_root = None
