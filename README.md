@@ -1,6 +1,22 @@
 ## Overview
 This project has been refactored to organize the functionality across three main modules that are executed through the **MainRun.py** file. The objective was to split responsibilities and ensure clarity, modularity, and scalability in the program's structure. The program simulates a card game where players are generated, cards are drawn for each player, and players take turns.
 
+```
+/Uno_Game/
+    ├── MainRun.py
+    └── GameModules/
+        ├── PlayerTurn.py
+        ├── GeneratePlayers.py
+        └── DrawCard.py
+    └── Modules/
+        ├── Displaycard.py
+        ├── RandGenrator.py
+        └── ReadWrite.py
+    └── Docs/
+        ├── Profanities.txt
+        ├── ModularArithmatic.md      
+```      
+
 ### Key Modules:
 1. **MainRun.py** - The main entry point that triggers the execution of the different game stages.
 2. **GeneratePlayers.py** - Responsible for generating and validating player names.
